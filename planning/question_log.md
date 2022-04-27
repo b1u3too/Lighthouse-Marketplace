@@ -13,7 +13,7 @@ A: Since admins won't have a lot of extra permissions compared to a user the ERD
 A: Let's skip stock -- since it's mostly a "Facebook Marketplace-y" vibe.
 
 #### Q: Are we going to create message page? Or just provide contact info? 
-A: How about we put it as an textbox form a la' facebook messages. After talking with Taiwo, being able to text and email from the app seems beyond the scope of the project in two weeks. We could stretch if we want but can start with <a> tags that link to [phone numbers](https://blog.hubspot.com/website/html-telephone-link) and email.
+A: How about we put it as an textbox form a la' facebook messages. After talking with Taiwo, being able to text and email from the app seems beyond the scope of the project in two weeks. We could stretch if we want but can start with <a> tags that link to [phone numbers](https://css-tricks.com/snippets/html/iphone-calling-and-texting-links/) and email.
 
 #### Q: SPA or MPA ? 
 A: How about MPA, pages:
