@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Home Page</title>
+  <title>Mylisting Page</title>
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -14,16 +14,10 @@
 </head>
 
 <body>
-  <header>
-    <!-- direct to a users list of selling items page -->
-    <a href="/api/mylistings/"> my listings </a>
-    <!-- direct to a users favorites page -->
-    <a href="/api/favorites/"> favorites </a>
-  </header>
-
-  <% for (let item of items) { %>
-    <a href="/api/items/<%=item.id%>"><%= item.id %></a>
-    <p> <%= item.title %></p>
+  <% for (let listing of listings) { %>
+    <p> <%= listing.title %></p>
+    <p> <%= listing.price %></p>
+    <p> <%= listing.descriptions %></p>
   <% } %>
 </body>
 
