@@ -7,11 +7,18 @@
   <%- include('partials/head'); %>
 </head>
   <%- include('partials/nav')%>
-<header>
-
-</header>
 
 <body>
+
+  <header>
+    <!-- to-do incorporate anchor links and touch up styling -->
+    <%- include('partials/nav')%>
+    <!-- direct to a users list of selling items page 
+    <a href="/api/mylistings/"> my listings </a> -->
+    <!-- direct to a users favorites page 
+    <a href="/api/favorites/"> favorites </a> -->
+  </header>
+
   <div class="listing-tiles">
     <% for (let item of items) { %>
       <div class="tile">

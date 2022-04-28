@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Individual Item Page</title>
+  <title>Mylisting Page</title>
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -14,9 +14,11 @@
 </head>
 
 <body>
-  <p><%= item.id %></p>
-  <p><%= item.title %></p>
-  <p><%= item.description %></p>
+  <% for (let listing of listings) { %>
+    <p> <%= listing.title %></p>
+    <p> <%= listing.price %></p>
+    <p> <%= listing.descriptions %></p>
+  <% } %>
 </body>
 
 </html>
