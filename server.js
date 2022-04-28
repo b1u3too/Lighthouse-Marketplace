@@ -56,7 +56,6 @@ app.get("/", (req, res) => {
   db.query(queryString)
   .then(data => {
     const items = data.rows;
-    console.log(test);
     res.render("index", {items: items});
   })
 });

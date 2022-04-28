@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Home Page</title>
+  <title>Individual Item Page</title>
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -14,10 +14,9 @@
 </head>
 
 <body>
-  <% for (let item of items) { %>
-    <a href="/api/items/<%=item.id%>"><%= item.id %></a>
-    <p> <%= item.name %></p>
-  <% } %>
+  <p><%= item.id %></p>
+  <p><%= item.name %></p>
+  <p><%= item.description %></p>
 </body>
 
 </html>
