@@ -7,11 +7,16 @@
 <%- include('partials/head'); %>
 </head>
 
+
 <body>
-  <% for (let item of items) { %>
-    <a href="/api/items/<%=item.id%>"><%= item.id %></a>
-    <p> <%= item.name %></p>
-  <% } %>
+  <div class="listing-tiles">
+    <% for (let item of items) { %>
+      <div class="tile">
+        <a href="/api/items/<%=item.id%>"><%= item.id %></a>
+        <p> <%= item.name %></p>
+      </div>
+    <% } %>
+  </div>
 </body>
 
 </html>
