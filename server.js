@@ -7,7 +7,7 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-
+const cookieSession = require('cookie-session')
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
@@ -32,6 +32,12 @@ app.use(
 );
 
 app.use(express.static("public"));
+
+app.use(cookieSession({
+  name: "session",
+  keys: ["xxx"],
+  maxAge: 24 * 60 * 60 * 1000
+}))
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
