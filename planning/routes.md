@@ -30,5 +30,5 @@ A POST  /messages ---------------------- Add a new message <br>
 D POST  /messages/:message_id/delete ------ Delete a message (Are we doing this?)<br>
 
 ### Helpful refresher videos for Express, and jumping-off point info about the Router() object
-- [How to Use Express Router] (https://www.youtube.com/watch?v=paNikhYqdz0)
-- [ExpressJS - Router and Routes] (https://www.youtube.com/watch?v=iM_S4RczozU)
+- [How to Use Express Router](https://www.youtube.com/watch?v=paNikhYqdz0)
+- [ExpressJS - Router and Routes](https://www.youtube.com/watch?v=iM_S4RczozU)
