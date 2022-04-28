@@ -9,5 +9,19 @@ body,
 html {
   font: 100% $body-font-stack;
   margin: 0;
-  background-image: url(../images/background.png)
+}
+
+.listing-tiles {
+  width: 75vw;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+  .tile {
+    width: 360px;
+    height: 360px;
+    background-color: $sea-serpent;
+    margin-bottom: 3em;
+  }
 }
