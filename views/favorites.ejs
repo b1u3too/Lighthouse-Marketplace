@@ -15,8 +15,7 @@
 
 <body>
   <% for (let favorite of favorites) { %>
-    <p> <%= favorite.id %></p>
-    <p> <%= favorite.seller_id %></p>
+    <a href="/api/items/<%=favorite.item_id%>"><%= favorite.id %></a>
     <p> <%= favorite.title %></p>
     <p> <%= favorite.price %></p>
     <p> <%= favorite.description %></p>
