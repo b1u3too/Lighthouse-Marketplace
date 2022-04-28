@@ -1,6 +1,13 @@
 // See: https://sass-lang.com/
+$title-font-stack: 'Lobster', cursive;
+$body-font-stack: 'Andika New Basic', sans-serif;
+$sea-serpent: #4DC1C4;
+$off-white: #FCFCFC;
+$gray: #C4C4C4;
 
 body,
 html {
+  font: 100% $body-font-stack;
   margin: 0;
+  background-image: url(../images/background.png)
 }
