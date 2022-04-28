@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Home Page</title>
+  <title>Favorites Page</title>
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -14,14 +14,12 @@
 </head>
 
 <body>
-  <header>
-    <!-- direct to a users favorites page -->
-    <a href="/api/favorites/"> favorites </a>
-  </header>
-
-  <% for (let item of items) { %>
-    <a href="/api/items/<%=item.id%>"><%= item.id %></a>
-    <p> <%= item.name %></p>
+  <% for (let favorite of favorites) { %>
+    <p> <%= favorite.id %></p>
+    <p> <%= favorite.seller_id %></p>
+    <p> <%= favorite.name %></p>
+    <p> <%= favorite.price %></p>
+    <p> <%= favorite.description %></p>
   <% } %>
 </body>
 
