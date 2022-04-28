@@ -1,8 +1,33 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+$title-font-stack: 'Lobster', cursive;
+$body-font-stack: 'Andika New Basic', sans-serif;
+$sea-serpent: #4DC1C4;
+$off-white: #FCFCFC;
+$gray: #C4C4C4;
 
+body {
   background-image: url(../images/background.png);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75vw;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 60pt;
+    font-family: $title-font-stack;
+    color: black;
+  }
+
+  button {
+    font-size: 1.5em;
+    background-color: #4DC1C4;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 15px;
+    padding: 0.5em 1.8em;
+    margin: 0 0.3em;
+  }
 }
