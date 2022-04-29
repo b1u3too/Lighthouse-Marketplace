@@ -48,11 +48,10 @@
       <!-- TO DO: Image link is broken, but why?  -->
       <article class="tile">
         <img href=<%= item.photo_url%> alt="listing photograph">
-        <a href="/api/items/<%=item.id%>"><%= item.name %></a>
+        <a href="/api/items/<%=item.id%>"><%= item.title %></a>
         <p> $<%= item.price %>.00</p>
       </article>
     <% } %>
   </section>
 </body>
-
 </html>
