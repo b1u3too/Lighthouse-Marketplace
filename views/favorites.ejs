@@ -7,7 +7,11 @@
 </head>
 
 <body>
-<h2>Your Favourite Finds</h2>
+  <header>
+    <%- include('partials/nav')%>
+  </header>
+
+  <h2>Your Favourite Finds</h2>
   <section class="listing-tiles">
     <% for (let favorite of favorites) { %>
       <article>
