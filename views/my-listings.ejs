@@ -7,6 +7,16 @@
 </head>
 
 <body>
+  <header>
+    <%- include('partials/nav')%>
+  </header>
+
+  <div class="listings-banner">
+    <h2>Your Listings</h2>
+    <!-- TODO: Define the endpoint taking a person to the new-listing page -->
+    <a href=#>New Listing</a>
+  </div>
+
   <% for (let listing of listings) { %>
     <p> <%= listing.title %></p>
     <p> <%= listing.price %></p>
