@@ -3,7 +3,6 @@
 
 <head>
   <title>Home Page</title>
-
   <%- include('partials/head'); %>
 </head>
 
@@ -12,6 +11,15 @@
   <header>
     <%- include('partials/nav')%>
   </header>
+
+  <section class="hero-banner">
+    <p>scroll for your featured catch or...</p>
+    <div class="open-search-toggle">
+      <span class="iconify" data-icon="bi:search-heart"></span>
+      <p>go fishing</p>
+    </div>
+    <img src="../images/day50-pirahna.png" alt="happy piranha logo">
+  </section>
 
   <section class="listing-tiles">
     <% for (let item of items) { %>
