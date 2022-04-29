@@ -13,11 +13,33 @@
   </header>
 
   <section class="hero-banner">
-    <p>scroll for your featured catch or...</p>
-    <div class="open-search-toggle">
-      <span class="iconify" data-icon="bi:search-heart"></span>
-      <p>go fishing</p>
-    </div>
+    <article class="welcome-message">
+      <p>scroll for your featured catch or...</p>
+      <div class="open-search-toggle">
+        <span class="iconify" data-icon="bi:search-heart"></span>
+        <p>go fishing</p>
+      </div>
+    </article>
+    <article>
+      <form> <!--TO DO: DEFINE ACTION WITH GOTTEN DATA-->
+        <p>What's your price range?</p>
+        <div>
+          <label for="min-cost">Min Cost</label>
+          <input type="text" id="min-cost">
+        </div>
+        <div>
+          <label for="max-cost">Max Cost</label>
+          <input type="text" id="max-cost">
+        </div>
+        <div>
+          <p>What order do you want to see your results?</p>
+          <input type="radio" id="asc" name="order-by" value="ASC">
+          <label for="asc">Low To High</label>
+          <input type="radio" id="desc" name="order-by" value="DESC">
+          <label for="desc">High To Low</label>
+        </div>
+      </form>
+    </article>
     <img src="../images/day50-pirahna.png" alt="happy piranha logo">
   </section>
 
