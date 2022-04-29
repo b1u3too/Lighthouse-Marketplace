@@ -17,11 +17,26 @@
     <a href=#>New Listing</a>
   </div>
 
-  <% for (let listing of listings) { %>
-    <p> <%= listing.title %></p>
-    <p> <%= listing.price %></p>
-    <p> <%= listing.descriptions %></p>
-  <% } %>
+  <section class="my-listing-feed">
+    <% for (let listing of listings) { %>
+      <article>
+        <!-- TODO: another location that needs broken image link help -->
+        <img href="#">
+        <div class="listing-preview">
+          <p> <%= listing.title %></p>
+          <p> <%= listing.description %></p>
+          <p> $<%= listing.price %>.00</p>
+        </div>
+        <div class="listing-options">
+          <!-- TODO: these anchor endpoints will need some definition! -->
+          <a href=#>Edit</a>
+          <!-- IDEA: Could we use JQuery to give the user some kind of confirmation (sold: congrats! de-list: are you sure? Okay bye!) and refresh the page a second later? That might make for a nicer user experience! -->
+          <a href=#>Mark Sold</a>
+          <a href=#>De-list</a>
+        </div>
+      </article>
+    <% } %>
+  </section>
 </body>
 
 </html>
