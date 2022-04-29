@@ -1,6 +1,27 @@
 // See: https://sass-lang.com/
+$title-font-stack: 'Lobster', cursive;
+$body-font-stack: 'Andika New Basic', sans-serif;
+$sea-serpent: #4DC1C4;
+$off-white: #FCFCFC;
+$gray: #C4C4C4;
 
 body,
 html {
+  font: 100% $body-font-stack;
   margin: 0;
+}
+
+.listing-tiles {
+  width: 75vw;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+  .tile {
+    width: 360px;
+    height: 360px;
+    background-color: $sea-serpent;
+    margin-bottom: 3em;
+  }
 }
