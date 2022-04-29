@@ -21,12 +21,18 @@ nav {
     color: black;
   }
 
-  button {
-    font-size: 1.5em;
-    background-color: #4DC1C4;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    border: none;
-    border-radius: 15px;
+  #nav-buttons {
+    a {
+      font-size: 1.5em;
+      color: black;
+      font-style: none;
+      text-decoration: none;
+      background-color: #4DC1C4;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
     padding: 0.5em 1.8em;
     margin: 0 0.3em;
   }

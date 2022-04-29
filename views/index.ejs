@@ -3,30 +3,60 @@
 
 <head>
   <title>Home Page</title>
-
   <%- include('partials/head'); %>
 </head>
-  <%- include('partials/nav')%>
 
 <body>
 
   <header>
-    <!-- to-do incorporate anchor links and touch up styling -->
     <%- include('partials/nav')%>
-    <!-- direct to a users list of selling items page 
-    <a href="/api/mylistings/"> my listings </a> -->
-    <!-- direct to a users favorites page 
-    <a href="/api/favorites/"> favorites </a> -->
   </header>
 
-  <div class="listing-tiles">
-    <% for (let item of items) { %>
-      <div class="tile">
-        <a href="/api/items/<%=item.id%>"><%= item.id %></a>
-        <p> <%= item.name %></p>
+  <section class="hero-banner">
+    <article class="welcome-message">
+      <p>scroll for your featured catch or...</p>
+      <div class="open-search-toggle">
+        <span class="iconify" data-icon="bi:search-heart"></span>
+        <p>go fishing</p>
       </div>
-    <% } %>
-  </div>
-</body>
+    </article>
+    <article>
+      <form> <!--TO DO: DEFINE ACTION WITH GOTTEN DATA, connect submit and form!-->
+        <p>What's your price range?</p>
+        <div>
+          <label for="min-cost">Min Cost</label>
+          <input type="text" id="min-cost" name="min-cost">
+        </div>
+        <div>
+          <label for="max-cost">Max Cost</label>
+          <input type="text" id="max-cost" name="max-cost">
+        </div>
+        <div>
+          <p>What order do you want to see your results?</p>
+          <input type="radio" id="asc" name="order-by" value="ASC">
+          <label for="asc">Low To High</label>
+          <input type="radio" id="desc" name="order-by" value="DESC">
+          <label for="desc">High To Low</label>
+        </div>
+        <button>Submit</button>
+      </form>
+    </article>
+    <img src="../images/day50-pirahna.png" alt="happy piranha logo">
+  </section>
 
+  <section class="listing-tiles">
+    <% for (let item of items) { %>
+      <!-- TO DO: Image link is broken, but why?  -->
+      <article class="tile">
+        <img href=<%= item.photo_url%> alt="listing photograph">
+        <a href="/api/items/<%=item.id%>"><%= item.title %></a>
+        <p> $<%= item.price %>.00</p>
+      </article>
+    <% } %>
+  </section>
+
+  <footer>
+    <%- include('partials/footer')%>
+  </footer>
+</body>
 </html>

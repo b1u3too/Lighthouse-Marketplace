@@ -2,23 +2,45 @@
 <html lang="en">
 
 <head>
-  <title>Mylisting Page</title>
-
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
+  <title>My Listings</title>
+  <%- include('partials/head'); %>
 </head>
 
 <body>
-  <% for (let listing of listings) { %>
-    <p> <%= listing.title %></p>
-    <p> <%= listing.price %></p>
-    <p> <%= listing.descriptions %></p>
-  <% } %>
+  <header>
+    <%- include('partials/nav')%>
+  </header>
+
+  <div class="listings-banner">
+    <h2>Your Listings</h2>
+    <!-- TODO: Define the endpoint taking a person to the new-listing page -->
+    <a href=#>New Listing</a>
+  </div>
+
+  <section class="my-listing-feed">
+    <% for (let listing of listings) { %>
+      <article>
+        <!-- TODO: another location that needs broken image link help -->
+        <img href="#">
+        <div class="listing-preview">
+          <p> <%= listing.title %></p>
+          <p> <%= listing.description %></p>
+          <p> $<%= listing.price %>.00</p>
+        </div>
+        <div class="listing-options">
+          <!-- TODO: these anchor endpoints will need some definition! -->
+          <a href=#>Edit</a>
+          <!-- IDEA: Could we use JQuery to give the user some kind of confirmation (sold: congrats! de-list: are you sure? Okay bye!) and refresh the page a second later? That might make for a nicer user experience! -->
+          <a href=#>Mark Sold</a>
+          <a href=#>De-list</a>
+        </div>
+      </article>
+    <% } %>
+  </section>
+
+  <footer>
+    <%- include('partials/footer')%>
+  </footer>
 </body>
 
 </html>

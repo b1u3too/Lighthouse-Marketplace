@@ -3,23 +3,30 @@
 
 <head>
   <title>Favorites Page</title>
-
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
+  <%- include('partials/head'); %>
 </head>
 
 <body>
-  <% for (let favorite of favorites) { %>
-    <a href="/api/items/<%=favorite.item_id%>"><%= favorite.id %></a>
-    <p> <%= favorite.title %></p>
-    <p> <%= favorite.price %></p>
-    <p> <%= favorite.description %></p>
-  <% } %>
+  <header>
+    <%- include('partials/nav')%>
+  </header>
+
+  <h2>Your Favourite Finds</h2>
+  <section class="listing-tiles">
+    <% for (let favorite of favorites) { %>
+      <article>
+        <!-- TO DO: Formatting... later! -->
+        <a href="/api/items/<%=favorite.item_id%>"><%= favorite.id %></a>
+        <p> <%= favorite.title %></p>
+        <p> <%= favorite.price %></p>
+        <p> <%= favorite.description %></p>
+      </article>
+    <% } %>
+  </section>
+
+  <footer>
+    <%- include('partials/footer')%>
+  </footer>
 </body>
 
 </html>
