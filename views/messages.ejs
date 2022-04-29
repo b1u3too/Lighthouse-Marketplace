@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>My Listings</title>
+  <%- include('partials/head'); %>
+</head>
+
+<body>
+  <header>
+    <title>Messages</title>
+    <%- include('partials/nav')%>
+  </header>
+
+  <section class="my-message-feed">
+    <div class="chatter-banner">
+      <p>Messages with PLACEHOLDER_NAME</p>
+      <div>
+        <p>OR</p>
+        <a href="mailto:PLACEHOLDER_EMAIL@EMAIL.COM">PLACEHOLDER_EMAIL</a>,
+        <a href="sms:PLACEHOLDER_PHONE">PLACEHOLDER_PHONE</a>
+      </div>
+    </div>
+
+    <!-- TODO: EJS LOOP FOOR LOOP THROUGH MESSAGES -->
+
+    <!-- SPACE FOR NEW MESSAGE INPUT -->
+    <form>
+      <input type="text" name="message" id="message" placeholder="Type new message here">
+      <button>
+        <span class="iconify" data-icon="akar-icons:send"></span>
+      </button>
+    </form>
+  </section>
+  <section>
+    <p>other recent chats</p>
+    <!-- TODO: Endpoint determination!  -->
+    <a href="#">Buyer A</a>
+    <a href="#">Buyer B</a>
+    <a href="#">Seller C</a>
+  </section>
+</body>
+</html>
