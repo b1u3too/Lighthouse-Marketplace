@@ -45,9 +45,11 @@
 
   <section class="listing-tiles">
     <% for (let item of items) { %>
+      <!-- TO DO: Image link is broken, but why?  -->
       <article class="tile">
-        <a href="/api/items/<%=item.id%>"><%= item.id %></a>
-        <p> <%= item.name %></p>
+        <img href=<%= item.photo_url%> alt="listing photograph">
+        <a href="/api/items/<%=item.id%>"><%= item.name %></a>
+        <p> $<%= item.price %>.00</p>
       </article>
     <% } %>
   </section>
