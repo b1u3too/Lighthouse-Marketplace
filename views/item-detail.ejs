@@ -7,9 +7,29 @@
 </head>
 
 <body>
-  <p><%= item.id %></p>
-  <p><%= item.title %></p>
-  <p><%= item.description %></p>
+  <header>
+    <%- include('partials/nav')%>
+  </header>
+
+  <article>
+    <!-- TODO: This is also a broken link that needs some help and attention! -->
+    <img href=<%= item.photo_url%> alt="listing image">
+    <h2><%= item.title %></h2>
+    <div>
+      <p>catch of the day</p>
+      <span class="iconify" data-icon="fa6-solid:fish"></span>
+    </div>
+    <!-- TODO: How could we get the seller name to display in next line? -->
+    <p><%= item.seller_id %></p>
+    <p><%= item.description %></p>
+    <p>$<%= item.price %>.00</p>
+  </article>
+  <div>
+    <a href=#>
+      <span class="iconify" data-icon="bi:chat-dots"></span>
+      <p>Message Seller</p>
+    </a>
+  </div>
 </body>
 
 </html>
