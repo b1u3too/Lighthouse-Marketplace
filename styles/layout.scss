@@ -16,12 +16,13 @@ html {
   margin: 0 auto;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: center;
 
   .tile {
     width: 360px;
     height: 360px;
     background-color: $sea-serpent;
-    margin-bottom: 3em;
+    margin:0em 1.5rem;
+    margin-bottom: 3rem;
   }
 }
