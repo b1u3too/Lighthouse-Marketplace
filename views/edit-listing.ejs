@@ -13,7 +13,7 @@
     </header>
 
     <!-- TODO: We could address both create/edit uses on this form if we want to with this logic... If page gotten to via "edit" button on listing, prepopulate values in the form from the old listing. If coming from the "New Listing" route, blank form. Need help figuring out how to make this work! Action on form and button needs definition! -->
-    <form>
+    <form action="/api/items/<%=item.id%>" method="POST" >
       <div>
         <label for="photo_url">Link to your listing photo:</label>
         <input type="text" id="photo_url" name="photo_url">

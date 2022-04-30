@@ -19,7 +19,7 @@
   <section class="my-listing-feed">
     <% for (let listing of listings) { %>
       <article>
-        <img src="<%= listing.photo_url%>">
+        <img src="<%= listing.photo_url%>" width =360px> <!-- For testing purpose adjusting the photo size -->
         <div class="listing-preview">
           <p> <%= listing.id %></p> <!-- For testing purpose -->
           <p> <%= listing.title %></p>
@@ -27,9 +27,8 @@
           <p> $<%= listing.price %>.00</p>
         </div>
         <div class="listing-options">
-          <!-- TODO: these anchor endpoints will need some definition! -->
-          <!-- Note: When the list is empty, below buttons will still show up, needs fix later -->
-          <a href=#>Edit</a>
+         <!-- Note: When the list is empty, below buttons will still show up, needs fix later -->
+          <a href="/api/items/<%=listing.id%>">Edit</a>
           <!-- IDEA: Could we use JQuery to give the user some kind of confirmation (sold: congrats! de-list: are you sure? Okay bye!) and refresh the page a second later? That might make for a nicer user experience! -->
           <a href=#>Mark Sold</a>
           <form action="/api/mylistings/<%= listing.id %>/delete" method="POST">
