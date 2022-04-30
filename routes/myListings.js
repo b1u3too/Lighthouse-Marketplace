@@ -10,7 +10,6 @@ module.exports = (db) => {
     LEFT JOIN items
     ON users.id = items.seller_id
     where users.id = $1`;
-
     db.query(queryString,[req.session.user_id])
       .then(data => {
         const listings = data.rows;
