@@ -16,5 +16,11 @@ module.exports = (db) => {
     res.redirect('/');
   });
 
+  // user logout
+  router.post("/logout", (req,res) => {
+    req.session = null;
+    res.redirect(`/`);
+  });
+
   return router;
 };

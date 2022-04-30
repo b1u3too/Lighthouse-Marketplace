@@ -50,5 +50,23 @@ module.exports = (db) => {
     });
   })
 
+  // delete an item from user's listing
+  router.post('/:id/delete', (req, res) => {
+    let queryString = `
+    DELETE FROM items
+    WHERE seller_id = $1
+    AND id = $2;`;
+
+    db.query(queryString, [req.session.user_id, req.params.id])
+      .then(data => {
+        res.redirect('/api/mylistings');
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
   return router;
 };

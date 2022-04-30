@@ -16,10 +16,14 @@
     <% for (let favorite of favorites) { %>
       <article>
         <!-- TO DO: Formatting... later! -->
-        <a href="/api/items/<%=favorite.item_id%>"><%= favorite.id %></a>
+        <a href="/api/items/<%=favorite.item_id%>"><%= favorite.item_id %></a>
         <p> <%= favorite.title %></p>
         <p> <%= favorite.price %></p>
         <p> <%= favorite.description %></p>
+        <form action="/api/favorites/<%= favorite.id %>/delete" method="POST">
+          <button type="submit">Remove</button>
+        </form>
+
       </article>
     <% } %>
   </section>
