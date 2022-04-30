@@ -8,6 +8,7 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const cookieSession = require('cookie-session')
+
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
@@ -18,7 +19,6 @@ db.connect();
 // 'dev' = Concise output colored by response status for development use.
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan("dev"));
-
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
@@ -46,6 +46,7 @@ const widgetsRoutes = require("./routes/widgets");
 const itemsRoutes = require("./routes/items");
 const favoritesRoutes = require("./routes/favorites");
 const mylistingsRoutes = require("./routes/myListings");
+const { query } = require("express");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
@@ -59,14 +60,45 @@ app.use("/api/mylistings", mylistingsRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-const queryString = "SELECT * FROM items;";
-
 app.get("/", (req, res) => {
-  db.query(queryString)
+  let queryString = "SELECT * FROM items ";
+  const [minCost, maxCost, orderBy]= [req.query['min-cost'], req.query['max-cost'], req.query['order-by']]
+  const queryParams = [];
+
+  if (minCost) {
+    queryParams.push(Number(minCost));
+    queryString += `WHERE price >= $${queryParams.length} `
+  }
+
+  if (maxCost) {
+    queryParams.push(Number(maxCost));
+    console.log(queryParams);
+    if(queryParams.length > 1) {
+      queryString += `AND price <= $${queryParams.length} `
+    } else {
+      queryString += `WHERE price <= $${queryParams.length} `
+    }
+  }
+
+  if (orderBy) {
+    if (orderBy === 'ASC') {
+      queryString += `ORDER BY price ASC `
+    } else {
+      queryString +=  `ORDER BY price DESC `
+    }
+  }
+
+  console.log(queryString);
+  db.query(queryString, queryParams)
   .then(data => {
     const items = data.rows;
     res.render("index", {items: items});
   })
+  .catch(err => {
+    res
+      .status(500)
+      .json({ error: err.message });
+  });
 });
 
 
