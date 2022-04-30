@@ -11,8 +11,8 @@ VALUES (5, 2, 'Lighthouse glowing on starry sky', 18, 'Cool Lighthouse glowing o
 INSERT INTO items (id, seller_id, title, price, description, photo_url, is_available, is_featured)
 VALUES (6, 3, 'Lighthouse Beside Palm Tree on Islet', 25, 'Cool Lighthouse Beside Palm Tree on Islet', 'https://images.pexels.com/photos/333528/pexels-photo-333528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', TRUE, FALSE);
 INSERT INTO items (id, seller_id, title, price, description, photo_url, is_available, is_featured)
-VALUES (7, 3, 'Lighthouse with birds', 14, 'https://images.pexels.com/photos/2501968/pexels-photo-2501968.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'Cool Lighthouse with birds', TRUE, FALSE);
+VALUES (7, 3, 'Lighthouse with birds', 14, 'Cool Lighthouse with birds', 'https://images.pexels.com/photos/2501968/pexels-photo-2501968.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', TRUE, FALSE);
 INSERT INTO items (id, seller_id, title, price, description, photo_url, is_available, is_featured)
-VALUES (8, 4, 'Lighthouse on Top of Limestone Rock Formation Overlooking Sea', 18, 'https://images.pexels.com/photos/9959286/pexels-photo-9959286.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'Cool Lighthouse on Top of Limestone Rock Formation Overlooking Sea', TRUE, FALSE);
+VALUES (8, 4, 'Lighthouse on Top of Limestone Rock Formation Overlooking Sea', 18, 'Cool Lighthouse on Top of Limestone Rock Formation Overlooking Sea', 'https://images.pexels.com/photos/9959286/pexels-photo-9959286.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', TRUE, FALSE);
 INSERT INTO items (id, seller_id, title, price, description, photo_url, is_available, is_featured)
-VALUES (9, 4, 'Split Rock Lighthouse on the Edge of a Mountain', 20, 'https://images.pexels.com/photos/5064716/pexels-photo-5064716.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2','Cool Split Rock Lighthouse on the Edge of a Mountain', TRUE, FALSE);
+VALUES (9, 4, 'Split Rock Lighthouse on the Edge of a Mountain', 20, 'Cool Split Rock Lighthouse on the Edge of a Mountain', 'https://images.pexels.com/photos/5064716/pexels-photo-5064716.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', TRUE, FALSE);

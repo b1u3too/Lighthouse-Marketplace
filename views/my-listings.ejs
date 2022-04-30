@@ -19,7 +19,7 @@
   <section class="my-listing-feed">
     <% for (let listing of listings) { %>
       <article>
-        <img src="<%= listing.photo_url%>">
+        <img src="<%= listing.photo_url%>" width =360px> <!-- For testing purpose -->
         <div class="listing-preview">
           <p> <%= listing.id %></p> <!-- For testing purpose -->
           <p> <%= listing.title %></p>
