@@ -19,8 +19,7 @@
   <section class="my-listing-feed">
     <% for (let listing of listings) { %>
       <article>
-        <!-- TODO: another location that needs broken image link help -->
-        <img href="#">
+        <img src="<%= item.photo_url%>">
         <div class="listing-preview">
           <p> <%= listing.id %></p> <!-- For testing purpose -->
           <p> <%= listing.title %></p>

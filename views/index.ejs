@@ -21,7 +21,7 @@
       </div>
     </article>
     <article>
-      <form> <!--TO DO: DEFINE ACTION WITH GOTTEN DATA, connect submit and form!-->
+      <form action="/" method="POST"> <!--TO DO: DEFINE ACTION WITH GOTTEN DATA, connect submit and form!-->
         <p>What's your price range?</p>
         <div>
           <label for="min-cost">Min Cost</label>
@@ -46,9 +46,8 @@
 
   <section class="listing-tiles">
     <% for (let item of items) { %>
-      <!-- TO DO: Image link is broken, but why?  -->
       <article class="tile">
-        <img href=<%= item.photo_url%> alt="listing photograph">
+        <img src="<%= item.photo_url%>" alt="listing photograph">
         <a href="/api/items/<%=item.id%>"><%= item.title %></a>
         <p> $<%= item.price %>.00</p>
       </article>
