@@ -13,8 +13,7 @@
 
   <div class="listings-banner">
     <h2>Your Listings</h2>
-    <!-- TODO: Define the endpoint taking a person to the new-listing page -->
-    <a href=#>New Listing</a>
+    <a href=/api/mylistings/new>New Listing</a>
   </div>
 
   <section class="my-listing-feed">
@@ -23,6 +22,7 @@
         <!-- TODO: another location that needs broken image link help -->
         <img href="#">
         <div class="listing-preview">
+          <p> <%= listing.id %></p> <!-- For testing purpose -->
           <p> <%= listing.title %></p>
           <p> <%= listing.description %></p>
           <p> $<%= listing.price %>.00</p>
