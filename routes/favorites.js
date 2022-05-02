@@ -45,8 +45,25 @@ module.exports = (db) => {
       });
   });
 
-  // remove an item from favorite list
+   // add an item to favorite list
+   router.post('/:id', (req, res) => {
+    let queryString = `
+    INSERT INTO favorites (item_id, buyer_id)
+    VALUES($1, $2)
+    RETURNING *;`;
 
+    db.query(queryString, [req.params.id, req.session.user_id])
+      .then(data => {
+        res.redirect('/api/favorites');
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
+  // remove an item from favorite list
   router.post('/:id/delete', (req, res) => {
     let queryString = `
     DELETE FROM favorites
