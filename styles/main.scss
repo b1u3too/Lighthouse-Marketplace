@@ -8,6 +8,15 @@ body {
   background-image: url(../images/background.png);
 }
 
+a {
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -16,13 +25,13 @@ nav {
   margin: 0 auto;
 
   h1 {
-    font-size: 60pt;
+    font-size: 4rem;
     font-family: $title-font-stack;
     color: black;
   }
 
   #nav-buttons {
-    a {
+    a, button {
       font-size: 1.5em;
       color: black;
       font-style: none;
@@ -36,4 +45,22 @@ nav {
     padding: 0.5em 1.8em;
     margin: 0 0.3em;
   }
+}
+
+.hero-banner {
+  background-color: $off-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cost-search {
+  display: none;
+}
+
+footer {
+  color: black;
+  font-family: $title-font-stack;
+  text-align: center;
+  background-color: $gray;
 }

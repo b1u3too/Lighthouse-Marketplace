@@ -14,15 +14,14 @@
 
   <section class="my-message-feed">
     <div class="chatter-banner">
-      <% for (let message of messages) { %>
-      <p>Messages with <%= message.placeholder_name %></p>
+      <p>Messages with placeholder_name</p>
       <div>
         <p>OR</p>
-        <a href="mailto:PLACEHOLDER_EMAIL@EMAIL.COM"><%= message.placeholder_name.toUpperCase() %>_EMAIL</a>,
-        <a href="sms:PLACEHOLDER_PHONE"><%= message.placeholder_name.toUpperCase() %>_PHONE</a>
+        <a href="mailto:PLACEHOLDER_EMAIL@EMAIL.COM">PLACEHOLDER_EMAIL</a>,
+        <a href="sms:PLACEHOLDER_PHONE">PLACEHOLDER_PHONE</a>
       </div>
     </div>
-
+    <% for (let message of messages) { %>
         <article>
           <!-- TO DO: Formatting... later! -->
           <p><%= message.placeholder_name %></p>

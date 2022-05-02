@@ -15,12 +15,12 @@
   <section class="hero-banner">
     <article class="welcome-message">
       <p>scroll for your featured catch or...</p>
-      <div class="open-search-toggle">
+      <button id="open-cost-search">
         <span class="iconify" data-icon="bi:search-heart"></span>
-        <p>go fishing</p>
-      </div>
+        go fishing
+      </button>
     </article>
-    <article>
+    <article id="cost-search">
       <form action="/" method="GET">
         <p>What's your price range?</p>
         <div>
@@ -50,6 +50,11 @@
         <img src="<%= item.photo_url%>" alt="listing photograph">
         <a href="/api/items/<%=item.id%>"><%= item.title %></a>
         <p> $<%= item.price %>.00</p>
+        <form>
+          <button>
+            <span class="iconify" data-icon="il:heart"></span>
+          </button>
+        </form>
       </article>
     <% } %>
   </section>
