@@ -7,7 +7,6 @@
 </head>
 
 <body>
-
   <header>
     <%- include('partials/nav')%>
   </header>
@@ -26,11 +25,10 @@
       <textarea type="text" name="description" id="description" cols="30" rows="10"></textarea>
     </div>
     <div>
-      <!-- TODO: Assumption here! Looks like the seed data is all even dollars, is that correct?  -->
       <label for="price">Price (Dollars)</label>
       <input type="text" id="price" name="price">
     </div>
-    <!-- QUESTION: Is catch of the day something we want users to be able to set themselves? -->
+    <!-- TODO: Disable the catch of the day field and mention "future construction"/paid feature -->
     <div>
       <label for="is_featured">Catch of the Day</label>
       <input type="checkbox" id="is_featured" name="is_featured">
