@@ -46,6 +46,7 @@ const widgetsRoutes = require("./routes/widgets");
 const itemsRoutes = require("./routes/items");
 const favoritesRoutes = require("./routes/favorites");
 const mylistingsRoutes = require("./routes/myListings");
+const messagesRoutes = require("./routes/messages");
 const { query } = require("express");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -54,6 +55,7 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/items", itemsRoutes(db));
 app.use("/api/favorites", favoritesRoutes(db));
 app.use("/api/mylistings", mylistingsRoutes(db));
+app.use("/api/messages", messagesRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
