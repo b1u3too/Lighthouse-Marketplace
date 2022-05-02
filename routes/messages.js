@@ -6,7 +6,7 @@ module.exports = (db) => {
   // show all the user's message
   router.get("/", (req, res) => {
    let queryString = `
-    SELECT messages.*, users.name AS buyer_name
+    SELECT messages.*, users.name AS placeholder_name
     FROM messages
     JOIN items ON item_id = items.id
     JOIN users ON buyer_id = users.id
@@ -16,7 +16,6 @@ module.exports = (db) => {
     db.query(queryString,[req.session.user_id])
       .then(data => {
         const messages = data.rows;
-        console.log(messages)
         res.render("mymessages", {messages: messages});
       })
       .catch(err => {
@@ -25,6 +24,11 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
+  // add new message
+  router.post("/", (req, res) => {
+
+   });
 
   return router;
 };

@@ -14,27 +14,27 @@
 
   <section class="my-message-feed">
     <div class="chatter-banner">
-      <p>Messages with PLACEHOLDER_NAME</p>
+      <% for (let message of messages) { %>
+      <p>Messages with <%= message.placeholder_name %></p>
       <div>
         <p>OR</p>
-        <a href="mailto:PLACEHOLDER_EMAIL@EMAIL.COM">PLACEHOLDER_EMAIL</a>,
-        <a href="sms:PLACEHOLDER_PHONE">PLACEHOLDER_PHONE</a>
+        <a href="mailto:PLACEHOLDER_EMAIL@EMAIL.COM"><%= message.placeholder_name.toUpperCase() %>_EMAIL</a>,
+        <a href="sms:PLACEHOLDER_PHONE"><%= message.placeholder_name.toUpperCase() %>_PHONE</a>
       </div>
     </div>
-    <!-- TODO: EJS LOOP FOOR LOOP THROUGH MESSAGES -->
-      <% for (let message of messages) { %>
+
         <article>
           <!-- TO DO: Formatting... later! -->
-          <p><%= message.buyer_name %></p>
+          <p><%= message.placeholder_name %></p>
           <p> <%= message.created_at %></p>
           <p> <%= message.body %></p>
         </article>
       <% } %>
 
     <!-- SPACE FOR NEW MESSAGE INPUT -->
-    <form>
+    <form action="/api/messages" method="POST">
       <input type="text" name="message" id="message" placeholder="Type new message here">
-      <button>
+      <button type="submit">
         <span class="iconify" data-icon="akar-icons:send"></span>
       </button>
     </form>
