@@ -1,47 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <title>Home Page</title>
-    <%- include('partials/head'); %>
-  </head>
+<head>
+  <title>Home Page</title>
+  <%- include('partials/head'); %>
+</head>
 
-  <body>
+<body>
+  <header>
+    <%- include('partials/nav')%>
+  </header>
 
-    <header>
-      <%- include('partials/nav')%>
-    </header>
+  <form action="/api/mylistings/<%= item_id %>/edit" method="POST">
+    <div>
+      <label for="photo_url">Link to your listing photo:</label>
+      <input type="text" id="photo_url" name="photo_url">
+    </div>
+    <div>
+      <label for="title">Catchy headline:</label>
+      <input type="text" id="title" name="title">
+    </div>
+    <div>
+      <label for="description">Tell us more...</label>
+      <textarea type="text" name="description" id="description" cols="30" rows="10"></textarea>
+    </div>
+    <div>
+      <label for="price">Price (Dollars)</label>
+      <input type="text" id="price" name="price">
+    </div>
+    <!-- TODO: Disable the catch of the day field and mention "future construction"/paid feature -->
+    <div>
+      <label for="is_featured">Catch of the Day</label>
+      <input type="checkbox" id="is_featured" name="is_featured">
+    </div>
 
-    <!-- TODO: We could address both create/edit uses on this form if we want to with this logic... If page gotten to via "edit" button on listing, prepopulate values in the form from the old listing. If coming from the "New Listing" route, blank form. Need help figuring out how to make this work! Action on form and button needs definition! -->
-    <form action="/api/items/<%=item.id%>" method="POST" >
-      <div>
-        <label for="photo_url">Link to your listing photo:</label>
-        <input type="text" id="photo_url" name="photo_url">
-      </div>
-      <div>
-        <label for="title">Catchy headline:</label>
-        <input type="text" id="title" name="title">
-      </div>
-      <div>
-        <label for="description">Tell us more...</label>
-        <textarea name="description" id="description" cols="30" rows="10"></textarea>
-      </div>
-      <div>
-        <!-- TODO: Assumption here! Looks like the seed data is all even dollars, is that correct?  -->
-        <label for="max-cost">Price (Dollars)</label>
-        <input type="text" id="max-cost" name="max-cost">
-      </div>
-      <!-- QUESTION: Is catch of the day something we want users to be able to set themselves? -->
-      <div>
-        <label for="is_featured">Catch of the Day</label>
-        <input type="checkbox" id="is_featured" name="is_featured">
-      </div>
-      <button type="submit">Save Changes</button>
-    </form>
+    <button type="submit">Save Changes</button>
 
-    <footer>
-      <%- include('partials/footer')%>
-    </footer>
-  </body>
+  </form>
+
+  <footer>
+    <%- include('partials/footer')%>
+  </footer>
+</body>
 
 </html>
