@@ -14,23 +14,33 @@
 
 
 <main>
-    <% for (const contact of messageFeeds) {%>
-    <a href="#">
-      <!-- We should use contact.id to define an endpoint that shows all the messages with one party -->
-      <%= contact.name %>
-    </a>
+
+  <p>Inquiries</p>
+
+    <div>
+    <% for (const message of messages) {%>
+      <article>
+        <div class="indivisual_message">
+          <p> SENT FROM <%= message.message_from%></p>
+          <p> MESSAGE ABOUT <%= message.inquiry_about %></p>
+          <p> SENT AT <%= message.created_at %></p>
+          <p> MESSAGE <%= message.body %></p>
+        </div>
+        <div class="message-options">
+          <div>
+            <a href="mailto: <%= message.email %>">EMAIL</a>,
+            <a href="sms:message.phone"> PHONE</a>
+          </div>
+          <form action="/api/message/<%= message.id %>/read" method="POST">
+            <button type="submit">Mark READ</button>
+          </form>
+          <form action="/api/message/<%= message %>/delete" method="POST">
+            <button type="submit">DELETE</button>
+          </form>
+        </div>
+      </article>
     <% } %>
   </main>
-
-  <!-- SCIENCE TOWN CASUALTY -->
-
-      <p>Messages with placeholder_name</p>
-      <div>
-        <p>OR</p>
-        <a href="mailto:PLACEHOLDER_EMAIL@EMAIL.COM">PLACEHOLDER_EMAIL</a>,
-        <a href="sms:PLACEHOLDER_PHONE">PLACEHOLDER_PHONE</a>
-      </div>
-    </div>
 
 
     <!-- SPACE FOR NEW MESSAGE INPUT -->
