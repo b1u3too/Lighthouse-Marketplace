@@ -18,6 +18,17 @@ a {
   }
 }
 
+.hero-banner {
+  background-color: $off-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cost-search {
+  display: none;
+}
+
 .listing-tiles {
   // width: 85vw;
   margin: 0 auto;
@@ -36,22 +47,4 @@ a {
       height: 360px;
     }
   }
-}
-
-.hero-banner {
-  background-color: $off-white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#cost-search {
-  display: none;
-}
-
-footer {
-  color: black;
-  font-family: $title-font-stack;
-  text-align: center;
-  background-color: $gray;
 }
