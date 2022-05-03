@@ -13,11 +13,11 @@
 
   <div class="listings-banner">
     <h2>Your Listings</h2>
-    <a href=/api/mylistings/new>New Listing</a>
-  </div>
-  <section class="my-listing-feed">
     <% for (let listing of listings) { %>
       <% if(listing.seller_id) {%>
+      <a href=/api/mylistings/new>New Listing</a>
+      </div>
+      <section class="my-listing-feed">
       <article>
         <img src="<%= listing.photo_url%>" width =360px> <!-- For testing purpose adjusting the photo size -->
         <div class="listing-preview">
@@ -29,15 +29,20 @@
         <div class="listing-options">
           <a href='/api/mylistings/<%= listing.id %>/edit'>Edit</a>
           <!-- IDEA: Could we use JQuery to give the user some kind of confirmation (sold: congrats! de-list: are you sure? Okay bye!) and refresh the page a second later? That might make for a nicer user experience! -->
-          <!-- TODO: define endpoint -->
-          <a href=#>Mark Sold</a>
+          <% if (listing.is_available === true) { %>
+          <form action="/api/mylistings/<%= listing.id %>/sold" method="POST">
+            <button type="submit">Mark Sold</button>
+          </form>
+          <% } else { %>
+            <p>SOLD</p>
+          <% } %>
           <form action="/api/mylistings/<%= listing.id %>/delete" method="POST">
             <button type="submit">DELETE</button>
           </form>
         </div>
       </article>
-      <% } %>
     <% } %>
+      <% } %>
 
   </section>
   <footer>

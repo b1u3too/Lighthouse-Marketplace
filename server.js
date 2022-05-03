@@ -67,26 +67,26 @@ app.get("/", (req, res) => {
   const [minCost, maxCost, orderBy]= [req.query['min-cost'], req.query['max-cost'], req.query['order-by']]
   const queryParams = [];
 
+  queryString += `WHERE is_available = TRUE `;
+
   if (minCost) {
     queryParams.push(Number(minCost));
-    queryString += `WHERE price >= $${queryParams.length} `
+    queryString += `AND price >= $${queryParams.length} `
   }
 
   if (maxCost) {
     queryParams.push(Number(maxCost));
     console.log(queryParams);
-    if(queryParams.length > 1) {
-      queryString += `AND price <= $${queryParams.length} `
-    } else {
-      queryString += `WHERE price <= $${queryParams.length} `
-    }
+    queryString += `AND price <= $${queryParams.length} `
   }
+
+  queryString += `ORDER BY is_featured DESC`
 
   if (orderBy) {
     if (orderBy === 'ASC') {
-      queryString += `ORDER BY price ASC `
+      queryString += `, price ASC `
     } else {
-      queryString +=  `ORDER BY price DESC `
+      queryString +=  `, price DESC `
     }
   }
 

@@ -23,12 +23,17 @@
     <p><%= item.description %></p>
     <p>$<%= item.price %>.00</p>
   </article>
-  <div>
-    <a href='/api/messages/'>
-      <span class="iconify" data-icon="bi:chat-dots"></span>
-      <p>Message Seller</p>
-    </a>
-  </div>
+
+  <% if (item.is_available) { %>
+    <div>
+      <a href=#>
+        <span class="iconify" data-icon="bi:chat-dots"></span>
+        <p>Message Seller</p>
+      </a>
+    </div>
+    <% } else { %>
+      <p>SOLD</p>
+    <% } %>
 
   <footer>
     <%- include('partials/footer')%>

@@ -40,3 +40,14 @@ html {
     }
   }
 }
+
+footer {
+  color: black;
+  font-family: $title-font-stack;
+  text-align: center;
+  background-color: $gray;
+
+  .iconify {
+    font-size: 3rem;
+  }
+}

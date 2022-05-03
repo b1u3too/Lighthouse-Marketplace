@@ -50,8 +50,8 @@
         <img src="<%= item.photo_url%>" alt="listing photograph">
         <a href="/api/items/<%=item.id%>"><%= item.title %></a>
         <p> $<%= item.price %>.00</p>
-        <form>
-          <button>
+        <form action="/api/favorites/<%= item.id %>" method="POST">
+          <button type="submit">
             <span class="iconify" data-icon="il:heart"></span>
           </button>
         </form>
