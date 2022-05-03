@@ -119,5 +119,24 @@ module.exports = (db) => {
       });
   });
 
+  //mark a listing as sold
+  router.post('/:id/sold', (req, res) => {
+    let queryString = `
+    UPDATE items
+    SET is_available = FALSE
+    WHERE seller_id = $1
+    AND id = $2;`;
+
+    db.query(queryString, [req.session.user_id, req.params.id])
+      .then(data => {
+        res.redirect('/api/mylistings');
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
   return router;
 };
