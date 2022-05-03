@@ -29,3 +29,18 @@ a {
 img {
   width: 360px;
 }
+
+button {
+  padding: 0 1rem;
+  border: 4px $gray outset;
+  border-radius: 15px;
+  background-color: $off-white;
+
+  &:hover {
+    background-color: $gray;
+  }
+
+  &:active {
+    background-color: $sea-serpent;
+  }
+}
