@@ -29,8 +29,13 @@
         <div class="listing-options">
           <a href='/api/mylistings/<%= listing.id %>/edit'>Edit</a>
           <!-- IDEA: Could we use JQuery to give the user some kind of confirmation (sold: congrats! de-list: are you sure? Okay bye!) and refresh the page a second later? That might make for a nicer user experience! -->
-          <!-- TODO: define endpoint 
-          <a href=#>Mark Sold</a>
+          <% if (listing.is_available === true) { %>
+          <form action="/api/mylistings/<%= listing.id %>/sold" method="POST">
+            <button type="submit">Mark Sold</button>
+          </form>
+          <% } else { %>
+            <p>SOLD</p>
+          <% } %>
           <form action="/api/mylistings/<%= listing.id %>/delete" method="POST">
             <button type="submit">DELETE</button>
           </form>
