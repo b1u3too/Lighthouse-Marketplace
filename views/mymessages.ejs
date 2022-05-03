@@ -12,8 +12,18 @@
     <%- include('partials/nav')%>
   </header>
 
-  <section class="my-message-feed">
-    <div class="chatter-banner">
+
+<main>
+    <% for (const contact of messageFeeds) {%>
+    <a href="#">
+      <!-- We should use contact.id to define an endpoint that shows all the messages with one party -->
+      <%= contact.name %>
+    </a>
+    <% } %>
+  </main>
+
+  <!-- SCIENCE TOWN CASUALTY -->
+
       <p>Messages with placeholder_name</p>
       <div>
         <p>OR</p>
@@ -21,14 +31,7 @@
         <a href="sms:PLACEHOLDER_PHONE">PLACEHOLDER_PHONE</a>
       </div>
     </div>
-    <% for (let message of messages) { %>
-        <article>
-          <!-- TO DO: Formatting... later! -->
-          <p><%= message.placeholder_name %></p>
-          <p> <%= message.created_at %></p>
-          <p> <%= message.body %></p>
-        </article>
-      <% } %>
+
 
     <!-- SPACE FOR NEW MESSAGE INPUT -->
     <form action="/api/messages" method="POST">
@@ -46,7 +49,7 @@
     <a href="#">Seller C</a>
   </section>
 
-  <footer>
+  </main>
     <%- include('partials/footer')%>
   </footer>
 </body>
