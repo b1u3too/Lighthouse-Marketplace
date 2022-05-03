@@ -1,4 +1,4 @@
-// See: https://sass-lang.com/
+//Styling for styling used across multiple pages
 $title-font-stack: 'Lobster', cursive;
 $body-font-stack: 'Andika New Basic', sans-serif;
 $sea-serpent: #4DC1C4;
@@ -9,35 +9,19 @@ body,
 html {
   font: 100% $body-font-stack;
   margin: 0 auto;
-}
-
-.listing-tiles {
   width: 85vw;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-
-  .tile {
-    width: 360px;
-    background-color: $sea-serpent;
-    margin:0em 3.5rem 3.5rem;
-    text-align: center;
-
-    img {
-      width: 360px;
-      height: 360px;
-    }
-  }
+  background-image: url(../images/background.png);
 }
 
-footer {
+a {
   color: black;
-  font-family: $title-font-stack;
-  text-align: center;
-  background-color: $gray;
+  text-decoration: none;
 
-  .iconify {
-    font-size: 3rem;
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color:$sea-serpent;
   }
 }

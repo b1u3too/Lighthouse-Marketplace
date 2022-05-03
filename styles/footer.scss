@@ -1,0 +1,16 @@
+$title-font-stack: 'Lobster', cursive;
+$body-font-stack: 'Andika New Basic', sans-serif;
+$sea-serpent: #4DC1C4;
+$off-white: #FCFCFC;
+$gray: #C4C4C4;
+
+footer {
+  color: black;
+  font-family: $title-font-stack;
+  text-align: center;
+  background-color: $gray;
+
+  .iconify {
+    font-size: 3rem;
+  }
+}

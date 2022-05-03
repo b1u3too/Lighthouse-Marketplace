@@ -1,12 +1,9 @@
+//styling for layouts on index.ejs
 $title-font-stack: 'Lobster', cursive;
 $body-font-stack: 'Andika New Basic', sans-serif;
 $sea-serpent: #4DC1C4;
 $off-white: #FCFCFC;
 $gray: #C4C4C4;
-
-body {
-  background-image: url(../images/background.png);
-}
 
 a {
   color: black;
@@ -15,35 +12,29 @@ a {
   &:hover {
     text-decoration: underline;
   }
+
+  &:active {
+    color:$sea-serpent;
+  }
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 75vw;
+.listing-tiles {
+  // width: 85vw;
   margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 
-  h1 {
-    font-size: 4rem;
-    font-family: $title-font-stack;
-    color: black;
-  }
+  .tile {
+    width: 360px;
+    background-color: $sea-serpent;
+    margin:0em 3.5rem 3.5rem;
+    text-align: center;
 
-  #nav-buttons {
-    a, button {
-      font-size: 1.5em;
-      color: black;
-      font-style: none;
-      text-decoration: none;
-      background-color: #4DC1C4;
-      border: none;
-      border-radius: 15px;
-      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    img {
+      width: 360px;
+      height: 360px;
     }
-
-    padding: 0.5em 1.8em;
-    margin: 0 0.3em;
   }
 }
 
