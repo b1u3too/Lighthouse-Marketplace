@@ -32,11 +32,19 @@
           <input type="text" id="max-cost" name="max-cost">
         </div>
         <div>
-          <p>What order do you want to see your results?</p>
+          <label for="order-by">Show by:</label>
+
+          <select name="order-by" id="order-by">
+            <option value="">----</option>
+            <option value="ASC">Low to High</option>
+            <option value="DESC">High to Low</option>
+          </select>
+
+          <!-- <p>What order do you want to see your results?</p>
           <input type="radio" id="asc" name="order-by" value="ASC">
           <label for="asc">Low To High</label>
           <input type="radio" id="desc" name="order-by" value="DESC">
-          <label for="desc">High To Low</label>
+          <label for="desc">High To Low</label> -->
         </div>
         <button type="submit">Submit</button>
       </form>
@@ -57,7 +65,7 @@
           </div>
         <% } %>
 
-        <form action="/api/favorites/<%= item.id %>" method="POST">
+        <form   action="/api/favorites/<%= item.id %>" method="POST">
           <button type="submit">
             <span class="iconify" data-icon="il:heart"></span>
           </button>
