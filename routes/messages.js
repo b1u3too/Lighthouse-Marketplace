@@ -31,7 +31,7 @@ module.exports = (db) => {
   // show message history with the sender
   router.get("/message/:id", (req, res) => {
     let queryString = `
-    SELECT users.name AS sender_name, users.id AS sender_id, messages.item_id AS item_id, items.title AS inquiry_about, messages.created_at, messages.body, users.email, users.phone
+    SELECT users.name AS sender_name, messages.receiver_id, messages.item_id AS item_id, items.title AS inquiry_about, messages.created_at, messages.body, users.email, users.phone
     FROM messages
     JOIN users on sender_id = users.id
     JOIN items on item_id = items.id
