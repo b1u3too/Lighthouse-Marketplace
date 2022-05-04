@@ -50,6 +50,13 @@
         <img src="<%= item.photo_url%>" alt="listing photograph">
         <a href="/api/items/<%=item.id%>"><%= item.title %></a>
         <p> $<%= item.price %>.00</p>
+        <% if (item.is_featured) { %>
+          <div class="is-catch">
+            <p>catch of the day</p>
+            <span class="iconify" data-icon="fa6-solid:fish"></span>
+          </div>
+        <% } %>
+
         <form action="/api/favorites/<%= item.id %>" method="POST">
           <button type="submit">
             <span class="iconify" data-icon="il:heart"></span>
