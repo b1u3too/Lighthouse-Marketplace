@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>My Messages</title>
+  <%- include('partials/head'); %>
+</head>
+
+<body>
+  <header>
+    <title>Messages</title>
+    <%- include('partials/nav')%>
+  </header>
+
+
+<main>
+
+  <p>Inquiries</p>
+
+    <div>
+    <% for (const message of messages) {%>
+      <article>
+        <div class="individual_message">
+          <a href="/api/messages/users/<%= message.id %>"> SENT FROM <%= message.sender_name%></a>
+          <p> MESSAGE ABOUT <%= message.inquiry_about %></p>
+          <p> SENT AT <%= message.created_at %></p>
+          <p> MESSAGE <%= message.body %></p>
+        </div>
+        <div class="message-options">
+          <div>
+            <a href="mailto: <%= message.email %>">EMAIL</a>,
+            <a href="sms:message.phone"> PHONE</a>
+          </div>
+          <!-- Do we want this function?
+          <form action="/api/message/<%= message.id %>/read" method="POST">
+            <button type="submit">Mark as READ</button>
+          </form>
+          -->
+          <p>---------------------------------------</p>
+        </div>
+      </article>
+    <% } %>
+  </main>
+
+
+  <!-- <section>
+    <p>other recent chats</p>
+    <!-- TODO: Endpoint determination!
+    <a href="#">Buyer A</a>
+    <a href="#">Buyer B</a>
+    <a href="#">Seller C</a>
+  </section> -->
+
+  </main>
+    <%- include('partials/footer')%>
+  </footer>
+</body>
+</html>
