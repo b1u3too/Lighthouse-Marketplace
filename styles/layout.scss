@@ -88,3 +88,28 @@ form {
     padding: 0 1.5rem;
   }
 }
+
+.details-feed {
+  width: 75vw;
+  margin: 0 auto;
+
+  article {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    background-color: $off-white;
+    padding: 3rem;
+
+    .individual-details {
+      text-align: left;
+      width: 50%;
+    }
+
+    button {
+      width: 10rem;
+      height: 3rem;
+      text-align: center;
+
+    }
+  }
+}
