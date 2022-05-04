@@ -46,3 +46,23 @@ button {
     border-color: $sea-serpent;
   }
 }
+
+form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-bottom: 5rem;
+
+  input {
+    margin-bottom: 2rem;
+  }
+}
+
+.is-catch {
+  align-items: baseline;
+  justify-content: space-between;
+  width: 10rem;
+  display: flex;
+
+}
