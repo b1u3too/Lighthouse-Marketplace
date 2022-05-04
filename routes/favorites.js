@@ -6,7 +6,7 @@ module.exports = (db) => {
   // show a user's favorite list
   router.get("/", (req, res) => {
    let queryString = `
-    SELECT favorites.*, items.title, items.price, items.description
+    SELECT DISTINCT favorites.item_id, items.title, items.price, items.description
     FROM favorites
     LEFT JOIN items
     ON favorites.item_id = items.id
@@ -68,7 +68,7 @@ module.exports = (db) => {
     let queryString = `
     DELETE FROM favorites
     WHERE buyer_id = $1
-    AND id = $2;`;
+    AND item_id = $2;`;
 
     db.query(queryString, [req.session.user_id, req.params.id])
       .then(data => {
@@ -83,3 +83,4 @@ module.exports = (db) => {
 
   return router;
 };
+
