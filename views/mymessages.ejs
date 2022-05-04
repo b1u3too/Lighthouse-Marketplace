@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>My Listings</title>
+  <title>My Messages</title>
   <%- include('partials/head'); %>
 </head>
 
@@ -20,8 +20,8 @@
     <div>
     <% for (const message of messages) {%>
       <article>
-        <div class="indivisual_message">
-          <p> SENT FROM <%= message.message_from%></p>
+        <div class="individual_message">
+          <a href="/api/messages/users/<%= message.id %>"> SENT FROM <%= message.sender_name%></a>
           <p> MESSAGE ABOUT <%= message.inquiry_about %></p>
           <p> SENT AT <%= message.created_at %></p>
           <p> MESSAGE <%= message.body %></p>
@@ -31,33 +31,25 @@
             <a href="mailto: <%= message.email %>">EMAIL</a>,
             <a href="sms:message.phone"> PHONE</a>
           </div>
+          <!-- Do we want this function?
           <form action="/api/message/<%= message.id %>/read" method="POST">
-            <button type="submit">Mark READ</button>
+            <button type="submit">Mark as READ</button>
           </form>
-          <form action="/api/message/<%= message %>/delete" method="POST">
-            <button type="submit">DELETE</button>
-          </form>
+          -->
+          <p>---------------------------------------</p>
         </div>
       </article>
     <% } %>
   </main>
 
 
-    <!-- SPACE FOR NEW MESSAGE INPUT -->
-    <form action="/api/messages" method="POST">
-      <input type="text" name="message" id="message" placeholder="Type new message here">
-      <button type="submit">
-        <span class="iconify" data-icon="akar-icons:send"></span>
-      </button>
-    </form>
-  </section>
-  <section>
+  <!-- <section>
     <p>other recent chats</p>
-    <!-- TODO: Endpoint determination!  -->
+    <!-- TODO: Endpoint determination!
     <a href="#">Buyer A</a>
     <a href="#">Buyer B</a>
     <a href="#">Seller C</a>
-  </section>
+  </section> -->
 
   </main>
     <%- include('partials/footer')%>
