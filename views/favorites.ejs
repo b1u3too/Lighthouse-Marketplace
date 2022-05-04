@@ -11,22 +11,33 @@
     <%- include('partials/nav')%>
   </header>
 
-  <h2>Your Favourite Finds</h2>
-  <section class="listing-tiles">
-    <% for (let favorite of favorites) { %>
-      <article>
-        <!-- TO DO: Formatting... later! -->
-        <a href="/api/items/<%=favorite.item_id%>"><%= favorite.item_id %></a>
-        <p> <%= favorite.title %></p>
-        <p> <%= favorite.price %></p>
-        <p> <%= favorite.description %></p>
-        <form action="/api/favorites/<%= favorite.id %>/delete" method="POST">
-          <button type="submit">Remove</button>
-        </form>
-        <% if (favorite.is_available === false) {%>
-          <p> SOLD </p>
-        <% } %>
-      </article>
+  <section class="details-feed">
+    <h2>Your Favourite Finds</h2>
+
+    <% if (favorites) { %>
+      <% for (let favorite of favorites) { %>
+        <article>
+          <img src="<%= favorite.photo_url%>">
+          <div class="individual-details">
+            <a href="/api/items/<%=favorite.item_id%>"> <%= favorite.title %></a>
+            <p> <%= favorite.item_id %></p>
+            <p> <%= favorite.description %></p>
+            <% if (favorite.is_available === true) {%>
+              <p> $<%= favorite.price %>.00</p>
+            <% } else { %>
+              <p> SOLD </p>
+            <% } %>
+          </div>
+          <div class="buttons">
+            <form action="/api/favorites/<%= favorite.id %>/delete" method="POST">
+              <button type="submit">Remove</button>
+            </form>
+          </div>
+          <% if (favorite.is_available === false) {%>
+            <p> SOLD </p>
+          <% } %>
+        </article>
+      <% } %>
     <% } %>
   </section>
 

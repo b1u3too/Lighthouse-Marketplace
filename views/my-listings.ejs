@@ -11,38 +11,40 @@
     <%- include('partials/nav')%>
   </header>
 
-  <div class="listings-banner">
+  <div class="title-banner">
     <h2>Your Listings</h2>
+    <a href=/api/mylistings/new>New Listing</a>
+  </div>
+
+  <section class="details-feed">
     <% for (let listing of listings) { %>
       <% if(listing.seller_id) {%>
-      <a href=/api/mylistings/new>New Listing</a>
-      </div>
-      <section class="my-listing-feed">
-      <article>
-        <img src="<%= listing.photo_url%>" width =360px> <!-- For testing purpose adjusting the photo size -->
-        <div class="listing-preview">
-          <p> <%= listing.id %></p> <!-- For testing purpose -->
-          <p> <%= listing.title %></p>
-          <p> <%= listing.description %></p>
-          <p> $<%= listing.price %>.00</p>
-        </div>
-        <div class="listing-options">
-          <a href='/api/mylistings/<%= listing.id %>/edit'>Edit</a>
-          <!-- IDEA: Could we use JQuery to give the user some kind of confirmation (sold: congrats! de-list: are you sure? Okay bye!) and refresh the page a second later? That might make for a nicer user experience! -->
-          <% if (listing.is_available === true) { %>
-          <form action="/api/mylistings/<%= listing.id %>/sold" method="POST">
-            <button type="submit">Mark Sold</button>
-          </form>
-          <% } else { %>
-            <p>SOLD</p>
-          <% } %>
-          <form action="/api/mylistings/<%= listing.id %>/delete" method="POST">
-            <button type="submit">DELETE</button>
-          </form>
-        </div>
-      </article>
-    <% } %>
+        <article>
+          <img src="<%= listing.photo_url%>">
+          <div class="individual-details">
+            <p> <%= listing.id %></p> <!-- For testing purpose -->
+            <h3> <%= listing.title %></h3>
+            <p> <%= listing.description %></p>
+            <p> $<%= listing.price %>.00</p>
+          </div>
+          <div class="buttons">
+            <form action="/api/mylistings/<%= listing.id %>/edit" method="GET">
+              <button type="submit">EDIT</button>
+            </form>
+            <% if (listing.is_available === true) { %>
+              <form action="/api/mylistings/<%= listing.id %>/sold" method="POST">
+                <button type="submit">MARK SOLD</button>
+              </form>
+            <% } else { %>
+              <p>SOLD</p>
+            <% } %>
+            <form action="/api/mylistings/<%= listing.id %>/delete" method="POST">
+              <button type="submit">DELETE</button>
+            </form>
+          </div>
+        </article>
       <% } %>
+    <% } %>
 
   </section>
   <footer>
