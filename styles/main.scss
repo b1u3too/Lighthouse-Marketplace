@@ -27,8 +27,8 @@ a {
   article {
     text-align: center;
     font-size: 2rem;
-    width: 30%;
-    margin-right: 2rem;
+    // width: 30%;
+    padding-right: 2rem;
   }
 
   .welcome-message {
@@ -41,6 +41,7 @@ a {
 
     form {
       text-align: center;
+      width: 40vw;
     }
 
     p {
@@ -48,7 +49,8 @@ a {
     }
 
     button {
-      margin-top: 2rem;
+      margin: 2rem auto 0;
+      width: 40%;
     }
   }
 
@@ -57,10 +59,6 @@ a {
     height: 40%;
     border-radius: none;
   }
-}
-
-#cost-search {
-  display: none;
 }
 
 .listing-tiles {
