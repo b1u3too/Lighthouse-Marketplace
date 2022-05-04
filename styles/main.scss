@@ -1,12 +1,9 @@
+//styling for layouts on index.ejs
 $title-font-stack: 'Lobster', cursive;
 $body-font-stack: 'Andika New Basic', sans-serif;
 $sea-serpent: #4DC1C4;
 $off-white: #FCFCFC;
 $gray: #C4C4C4;
-
-body {
-  background-image: url(../images/background.png);
-}
 
 a {
   color: black;
@@ -15,35 +12,9 @@ a {
   &:hover {
     text-decoration: underline;
   }
-}
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 75vw;
-  margin: 0 auto;
-
-  h1 {
-    font-size: 4rem;
-    font-family: $title-font-stack;
-    color: black;
-  }
-
-  #nav-buttons {
-    a, button {
-      font-size: 1.5em;
-      color: black;
-      font-style: none;
-      text-decoration: none;
-      background-color: #4DC1C4;
-      border: none;
-      border-radius: 15px;
-      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-
-    padding: 0.5em 1.8em;
-    margin: 0 0.3em;
+  &:active {
+    color:$sea-serpent;
   }
 }
 
@@ -52,15 +23,60 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  article {
+    text-align: center;
+    font-size: 2rem;
+    // width: 30%;
+    padding-right: 2rem;
+  }
+
+  .welcome-message {
+    padding: 0 5%;
+  }
+
+  #cost-search {
+    display: none;
+    font-size: 1.5rem;
+
+    form {
+      text-align: center;
+      width: 40vw;
+    }
+
+    p {
+      font-weight: bold;
+    }
+
+    button {
+      margin: 2rem auto 0;
+      width: 40%;
+    }
+  }
+
+  img {
+    width: 40%;
+    height: 40%;
+    border-radius: none;
+  }
 }
 
-#cost-search {
-  display: none;
-}
+.listing-tiles {
+  width: 85vw;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 
-footer {
-  color: black;
-  font-family: $title-font-stack;
-  text-align: center;
-  background-color: $gray;
+  .tile {
+    width: 360px;
+    background-color: $sea-serpent;
+    margin:0em 3.5rem 3.5rem;
+    text-align: center;
+
+    img {
+      width: 360px;
+      height: 360px;
+    }
+  }
 }
