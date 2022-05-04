@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>My Messages</title>
+  <%- include('partials/head'); %>
+</head>
+
+<body>
+  <header>
+    <title>Messages</title>
+    <%- include('partials/nav')%>
+  </header>
+
+
+<main>
+
+  <p>Conversation History</p>
+
+  <div>
+  <% for (const message of messages) {%>
+      <article>
+        <div class="individual_message">
+          <p> SENT FROM <%= message.sender_name%></p>
+          <p> MESSAGE ABOUT <%= message.inquiry_about %></p>
+          <p> SENT AT <%= message.created_at %></p>
+          <p> MESSAGE <%= message.body %></p>
+          <p>---------------------------------------------------------</p>
+        </div>
+      </article>
+   <% } %>
+  </div>
+
+
+    <!-- SPACE FOR NEW MESSAGE INPUT -->
+<form action="/api/messages" method="POST">
+      <input style="display:none" type="hidden" id="receiver_id" name="receiver_id" value=<%= messages.sender_id%>>
+      <input style="display:none" type="hidden" id="item_id" name="item_id" value=<%= messages.item_id%>>
+      <input type="text" id="message" name="message">
+  <button type="submit">
+  <span class="iconify" data-icon="akar-icons:send"></span>
+  </button>
+</form>
+
+  </main>
+    <%- include('partials/footer')%>
+  </footer>
+</body>
+</html>
