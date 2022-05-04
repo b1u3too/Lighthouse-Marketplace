@@ -46,7 +46,9 @@ module.exports = (db) => {
 
     db.query(queryString,[req.params.id])
       .then(data => {
-        const messages = data.rows;
+        const messages = data.rows.map(message => {
+          return {...message, created_at: dayjs(message.created_at).format('MMMM D, YYYY h:mm A')}
+        });
         res.render("message_history", {messages: messages});
       })
       .catch(err => {
