@@ -27,15 +27,20 @@ nav {
       border: none;
       border-radius: 15px;
       box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-
-    button {
-      border: none;
-      background-color: rgba(255,255,255,0.2);
-      color: lightcyan;
+      padding: 0 1.5rem;
     }
 
     padding: 0.5em 1.8em;
     margin: 0 0.3em;
   }
+}
+
+#logout {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  border: none;
+  background-color: rgba(255,255,255,0.2);
+  color: red;
+  font-size: larger;
 }
