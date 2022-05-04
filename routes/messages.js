@@ -1,5 +1,6 @@
 const express = require('express');
 const router  = express.Router();
+const dayjs = require('dayjs');
 
 module.exports = (db) => {
 
@@ -17,7 +18,10 @@ module.exports = (db) => {
 
     db.query(queryString,[req.session.user_id])
       .then(data => {
-        const messages = data.rows;
+        const messages = data.rows.map(message => {
+          return {...message, created_at: dayjs(message.created_at).format('MMMM D, YYYY h:mm A')}
+        });
+
         res.render("mymessages", { messages });
       })
       .catch(err => {
@@ -60,7 +64,6 @@ module.exports = (db) => {
     VALUES($1, $2, $3, $4)
     RETURNING *;
     `
-    console.log(req.body);
     let queryParams = [req.session.user_id, req.body.receiver_id, req.body.item_id, req.body.message];
 
     db.query(queryString,queryParams)
