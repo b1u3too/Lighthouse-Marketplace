@@ -10,7 +10,8 @@ module.exports = (db) => {
     FROM favorites
     LEFT JOIN items
     ON favorites.item_id = items.id
-    WHERE favorites.buyer_id = $1;`;
+    WHERE favorites.buyer_id = $1
+    ORDER BY favorites.item_id;`;
 
     db.query(queryString,[req.session.user_id])
       .then(data => {
