@@ -18,7 +18,6 @@ module.exports = (db) => {
     db.query(queryString,[req.session.user_id])
       .then(data => {
         const messages = data.rows;
-        console.log(messages);
         res.render("mymessages", { messages });
       })
       .catch(err => {
@@ -31,7 +30,7 @@ module.exports = (db) => {
   // show message history with the sender
   router.get("/message/:id", (req, res) => {
     let queryString = `
-    SELECT users.name AS sender_name, messages.receiver_id, messages.item_id AS item_id, items.title AS inquiry_about, messages.created_at, messages.body, users.email, users.phone
+    SELECT users.name AS sender_name, users.id AS sender_id, messages.item_id AS item_id, items.title AS inquiry_about, messages.created_at, messages.body, users.email, users.phone
     FROM messages
     JOIN users on sender_id = users.id
     JOIN items on item_id = items.id
@@ -44,7 +43,6 @@ module.exports = (db) => {
     db.query(queryString,[req.params.id])
       .then(data => {
         const messages = data.rows;
-        console.log(messages);
         res.render("message_history", {messages: messages});
       })
       .catch(err => {
@@ -62,8 +60,9 @@ module.exports = (db) => {
     VALUES($1, $2, $3, $4)
     RETURNING *;
     `
-    let queryParams = [req.session.user_id, req.body.receiver_id, req.body.item_id, req.body.message]
     console.log(req.body);
+    let queryParams = [req.session.user_id, req.body.receiver_id, req.body.item_id, req.body.message];
+
     db.query(queryString,queryParams)
     .then(data => {
       const messages = data.rows;
