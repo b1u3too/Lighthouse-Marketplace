@@ -1,6 +1,6 @@
 $(() => {
   $('#open-cost-search').on('click', () => {
-    $('.welcome-message').html('');
+    $('.welcome-message').hide();
     $('#cost-search').show();
   })
 });
