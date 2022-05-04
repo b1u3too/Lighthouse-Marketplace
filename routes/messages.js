@@ -29,9 +29,9 @@ module.exports = (db) => {
   });
 
   // show message history with the sender
-  router.get("/users/:id", (req, res) => {
+  router.get("/message/:id", (req, res) => {
     let queryString = `
-    SELECT users.name AS sender_name, users.id AS sender_id, items.id AS item_id, items.title AS inquiry_about, messages.created_at, messages.body, users.email, users.phone
+    SELECT users.name AS sender_name, users.id AS sender_id, messages.item_id AS item_id, items.title AS inquiry_about, messages.created_at, messages.body, users.email, users.phone
     FROM messages
     JOIN users on sender_id = users.id
     JOIN items on item_id = items.id
@@ -55,7 +55,7 @@ module.exports = (db) => {
   });
 
 
-  // add new message
+  // add new message from item_details
   router.post("/", (req, res) => {
     let queryString = `
     INSERT INTO messages(sender_id, receiver_id, item_id, body)
@@ -67,8 +67,7 @@ module.exports = (db) => {
     db.query(queryString,queryParams)
     .then(data => {
       const messages = data.rows;
-      console.log(messages);
-      res.redirect('/api/messages');
+      res.redirect("/");
     })
     .catch(err => {
       res
