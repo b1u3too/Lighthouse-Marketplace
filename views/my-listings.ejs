@@ -11,19 +11,19 @@
     <%- include('partials/nav')%>
   </header>
 
-  <section class="details-feed">
-    <div class="title-banner">
-      <h2>Your Listings</h2>
-      <a href=/api/mylistings/new>New Listing</a>
-    </div>
+  <div class="title-banner">
+    <h2>Your Listings</h2>
+    <a href=/api/mylistings/new>New Listing</a>
+  </div>
 
+  <section class="details-feed">
     <% for (let listing of listings) { %>
       <% if(listing.seller_id) {%>
         <article>
           <img src="<%= listing.photo_url%>">
           <div class="individual-details">
             <p> <%= listing.id %></p> <!-- For testing purpose -->
-            <p> <%= listing.title %></p>
+            <h3> <%= listing.title %></h3>
             <p> <%= listing.description %></p>
             <p> $<%= listing.price %>.00</p>
           </div>
