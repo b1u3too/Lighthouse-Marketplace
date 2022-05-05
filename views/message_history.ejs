@@ -34,7 +34,6 @@
       </article>
     <% } %>
     <div class="compose-message">
-      <p class="error-text"></p>
       <form id="chat-box" action="/api/messages" method="POST">
         <input type="hidden" id="receiver_id" name="receiver_id" value="<%= messages[0].sender_id%>">
         <input type="hidden" id="item_id" name="item_id" value="<%= messages[0].item_id%>">
@@ -43,6 +42,7 @@
         <span class="iconify" data-icon="akar-icons:send"></span>
         </button>
       </form>
+      <p class="error-text"></p>
     </div>
   </div>
 
