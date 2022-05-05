@@ -18,8 +18,10 @@
     <h2>Conversation History</h2>
   </div>
 
-  <h3>You conversation with <span class="accent-text"><%= messages[0].sender_name%></span> about  <span class="accent-text"><%= messages[0].inquiry_about %></span>!</h3>
-  <img src="<%= messages[0].photo_url%>">
+  <div class="conversation-hero-banner">
+    <h3>Your conversation with <span class="accent-text"><%= messages[0].sender_name%></span> about  <span class="accent-text"><%= messages[0].inquiry_about %></span>!</h3>
+    <img src="<%= messages[0].photo_url%>">
+  </div>
 
   <div class="details-feed">
     <% for (const message of messages) {%>
@@ -33,8 +35,6 @@
     <% } %>
   </div>
 
-
-    <!-- SPACE FOR NEW MESSAGE INPUT -->
   <div class="compose-message">
     <form action="/api/messages" method="POST">
       <input type="hidden" id="receiver_id" name="receiver_id" value="<%= messages[0].sender_id%>">
