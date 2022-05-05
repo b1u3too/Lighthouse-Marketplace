@@ -8,51 +8,39 @@
 
 <body>
   <header>
-    <title>Messages</title>
     <%- include('partials/nav')%>
   </header>
 
 
-<main>
+  <main>
+    <div class="title-banner">
+      <h2>Your Messages</h2>
+    </div>
 
-  <p>Inquiries</p>
-
-    <div>
-    <% for (const message of messages) {%>
-      <article>
-        <div class="individual_message">
-          <a href="/api/messages/conversation/<%= message.id %>"> SENT FROM <%= message.sender_name%></a>
-          <p> MESSAGE ABOUT <%= message.inquiry_about %></p>
-          <p> SENT AT <%= message.created_at %></p>
-          <p> MESSAGE <%= message.body %></p>
-        </div>
-        <div class="message-options">
-          <div>
-            <a href="mailto: <%= message.email %>">EMAIL</a>,
-            <a href="sms:message.phone"> PHONE</a>
-          </div>
-          <!-- Do we want this function?
-          <form action="/api/message/<%= message.id %>/read" method="POST">
-            <button type="submit">Mark as READ</button>
-          </form>
-          -->
-          <p>---------------------------------------</p>
-        </div>
-      </article>
-    <% } %>
+    <div class="details-feed">
+      <% if (messages.length > 0) { %>
+        <% for (const message of messages) {%>
+          <article>
+            <img src="<%= message.photo_url%>">
+            <div class="individual-details">
+              <p>From: <%= message.sender_name%></p>
+              <p> Listing: <%= message.inquiry_about %></p>
+              <p><%= message.created_at %></p>
+              <p class="message-contents"><%= message.body %></p>
+            </div>
+            <div class="buttons">
+              <p>follow up?</p>
+              <a href="mailto:<%= message.email %>">EMAIL</a>
+              <a href="sms:<%= message.phone %>">TEXT</a>
+              <a href="/api/messages/conversation/<%= message.id %>">LIGHT CHATS</a>
+            </div>
+          </article>
+        <% } %>
+      <%} else {%>
+        <p>No messages! Get people talking by putting your best and brightest <a href="api/mylistings/new" class="accent-text">up for sale</a>!</p>
+      <% } %>
+    </div>
   </main>
-
-
-  <!-- <section>
-    <p>other recent chats</p>
-    <!-- TODO: Endpoint determination!
-    <a href="#">Buyer A</a>
-    <a href="#">Buyer B</a>
-    <a href="#">Seller C</a>
-  </section> -->
-
-  </main>
-    <%- include('partials/footer')%>
-  </footer>
+  <%- include('partials/footer')%>
 </body>
 </html>

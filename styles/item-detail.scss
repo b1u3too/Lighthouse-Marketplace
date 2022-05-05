@@ -1,3 +1,26 @@
 $sea-serpent: #4DC1C4;
 $off-white: #FCFCFC;
 $gray: #C4C4C4;
+
+#item-detail {
+  .details-top-right, .individual-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  }
+
+  .details-top-right {
+    a {
+      font-size: 1rem;
+      color: $off-white;
+      font-style: none;
+      text-decoration: none;
+      background-color: $gray;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+      padding: 0 1.5rem;
+    }
+  }
+}
+

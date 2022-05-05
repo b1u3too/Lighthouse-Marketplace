@@ -8,7 +8,7 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
 
    let queryString = `
-   SELECT messages.id, users.id AS sender_id, users.name AS sender_name, users.email, users.phone, items.title AS inquiry_about, messages.created_at, messages.body
+   SELECT messages.id, users.id AS sender_id, users.name AS sender_name, users.email, users.phone, items.title AS inquiry_about, messages.created_at, messages.body, items.photo_url
    FROM messages
    JOIN users on sender_id = users.id
    JOIN items on item_id = items.id
@@ -34,7 +34,7 @@ module.exports = (db) => {
   // show message history with the sender
   router.get("/conversation/:id", (req, res) => {
     let queryString = `
-    SELECT users.name AS sender_name, users.id AS sender_id, messages.item_id AS item_id, items.title AS inquiry_about, messages.created_at, messages.body, users.email, users.phone
+    SELECT users.name AS sender_name, users.id AS sender_id, messages.item_id AS item_id, items.title AS inquiry_about, messages.created_at, messages.body, users.email, users.phone, items.photo_url
     FROM messages
     JOIN users on sender_id = users.id
     JOIN items on item_id = items.id

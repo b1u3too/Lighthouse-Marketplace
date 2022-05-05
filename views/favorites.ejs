@@ -10,22 +10,22 @@
   <header>
     <%- include('partials/nav')%>
   </header>
+  <div class="title-banner">
+    <h2>Your Favourite Finds</h2>
+  </div>
 
   <section class="details-feed">
-    <h2>Your Favourite Finds</h2>
-
-    <% if (favorites) { %>
-      <% for (let favorite of favorites) { %>
+    <% if (favorites.length > 0) { %>
+      <% for (const favorite of favorites) { %>
         <article>
           <img src="<%= favorite.photo_url%>">
           <div class="individual-details">
-            <a href="/api/items/<%=favorite.item_id%>"> <%= favorite.title %></a>
-            <p> <%= favorite.item_id %></p>
+            <a href="/api/items/<%=favorite.item_id%>"><%= favorite.title %></a>
             <p> <%= favorite.description %></p>
-            <% if (favorite.is_available === true) {%>
+            <% if (favorite.is_available) {%>
               <p> $<%= favorite.price %>.00</p>
             <% } else { %>
-              <p> SOLD </p>
+              <p class="sold-tag"> SOLD </p>
             <% } %>
           </div>
           <div class="buttons">
@@ -35,6 +35,8 @@
           </div>
         </article>
       <% } %>
+    <% } else { %>
+      <p>Looks like you haven't saved any listings yet, why not <a class="accent-text" href="/">go shopping</a>?</p>
     <% } %>
   </section>
 

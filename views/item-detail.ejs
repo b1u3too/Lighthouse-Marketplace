@@ -11,37 +11,52 @@
     <%- include('partials/nav')%>
   </header>
 
-  <article>
-    <img src="<%= item.photo_url%>" alt="listing image">
-    <h2><%= item.title %></h2>
-    <div class="is-catch">
-      <p>catch of the day</p>
-      <span class="iconify" data-icon="fa6-solid:fish"></span>
-    </div>
-    <p><%= item.seller_name %></p>
-    <p><%= item.description %></p>
-    <p>$<%= item.price %>.00</p>
-  </article>
+  <section id="item-detail" class="details-feed">
+    <article>
+      <img src="<%= item.photo_url%>" alt="listing image">
 
-  <% if (item.is_available) { %>
-    <div>
-        <p>Message Seller
-        <span class="iconify" data-icon="bi:chat-dots"></span>
-        </p>
-      <div class="compose-message">
-        <form action="/api/messages" method="POST">
-          <input type="hidden" id="receiver_id" name="receiver_id" value="<%= item.seller_id%>">
-          <input type="hidden" id="item_id" name="item_id" value="<%= item.id%>">
-          <input type="text" id="message" name="message">
-          <button type="submit">
+      <div class="individual-details">
+        <div>
+          <h2><%= item.title %></h2>
+          <p><%= item.seller_name %></p>
+          <p><%= item.description %></p>
+        </div>
+
+        <div class="compose-message">
+          <form id="chat-box" action="/api/messages" method="POST">
+            <input type="hidden" id="receiver_id" name="receiver_id" value="<%= item.seller_id%>">
+            <input type="hidden" id="item_id" name="item_id" value="<%= item.id%>">
+            <input type="text" id="message" name="message">
+            <button type="submit">
+            <p class="error-text"></p>
             <span class="iconify" data-icon="akar-icons:send"></span>
-          </button>
-          <p class="error-text"></p>
-        </form>
+            </button>
+          </form>
+        </div>
       </div>
-    <% } else { %>
-      <p>SOLD</p>
-    <% } %>
+
+      <div class="details-top-right">
+        <div>
+          <% if (item.is_featured) { %>
+            <div class="is-catch">
+              <p>catch of the day</p>
+              <span class="iconify" data-icon="fa6-solid:fish"></span>
+            </div>
+          <% } %>
+
+          <p>$<%= item.price %>.00</p>
+        </div>
+
+        <% if (item.is_available) { %>
+          <a href="#chat-box" id="open-message-form">Message Seller
+            <span class="iconify" data-icon="bi:chat-dots"></span>
+          </a>
+        <% } else { %>
+          <p class="sold-tag">SOLD</p>
+        <% } %>
+      </div>
+    </article>
+  </section>
 
   <footer>
     <%- include('partials/footer')%>

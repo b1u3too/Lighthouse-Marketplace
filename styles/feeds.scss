@@ -1,0 +1,69 @@
+$title-font-stack: 'Lobster', cursive;
+$body-font-stack: 'Andika New Basic', sans-serif;
+$sea-serpent: #4DC1C4;
+$sea-serpent-transparent: #4DC1C470;
+$off-white: #FCFCFC;
+$gray: #C4C4C4;
+$gray-transparent: #C4C4C470;
+
+.title-banner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  background-color: $sea-serpent-transparent;
+  padding: 1.5rem 13%;
+  margin-bottom: 3rem;
+
+  a {
+    font-size: 1.5em;
+    color: black;
+    font-style: none;
+    text-decoration: none;
+    background-color: $gray;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 0 1.5rem;
+  }
+}
+
+.details-feed {
+  width: 75vw;
+  margin: 0 auto 200px;
+
+  article {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    background-color: $off-white;
+    padding: 3rem;
+
+    .individual-details {
+      text-align: left;
+      width: 50%;
+    }
+
+    .buttons {
+      height: 3rem;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      a, button {
+        width: 10vw;
+        border: 4px $gray outset;
+        border-radius: 15px;
+        background-color: $off-white;
+
+        &:hover {
+          background-color: $gray;
+        }
+
+        &:active {
+          background-color: $sea-serpent;
+          border-color: $sea-serpent;
+        }
+      }
+    }
+  }
+}
