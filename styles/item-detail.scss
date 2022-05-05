@@ -9,6 +9,10 @@ $gray: #C4C4C4;
   justify-content: space-between;
   }
 
+  #chat-box {
+    display: none;
+  }
+
   .details-top-right {
     a {
       font-size: 1rem;
