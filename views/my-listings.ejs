@@ -17,7 +17,7 @@
   </div>
 
   <section class="details-feed">
-    <% for (let listing of listings) { %>
+    <% for (const listing of listings) { %>
       <% if(listing.seller_id) {%>
         <article>
           <img src="<%= listing.photo_url%>">
@@ -29,10 +29,10 @@
           </div>
 
           <div class="buttons">
-            <form action="/api/mylistings/<%= listing.id %>/edit" method="GET">
-              <button type="submit">EDIT</button>
-            </form>
             <% if (listing.is_available === true) { %>
+              <form action="/api/mylistings/<%= listing.id %>/edit" method="GET">
+                <button type="submit">EDIT</button>
+              </form>
               <form action="/api/mylistings/<%= listing.id %>/sold" method="POST">
                 <button type="submit">MARK SOLD</button>
               </form>
