@@ -51,6 +51,7 @@ module.exports = (db) => {
     let queryString = `
     INSERT INTO favorites (item_id, buyer_id)
     VALUES($1, $2)
+    ON CONFLICT (item_id, buyer_id) DO NOTHING
     RETURNING *;`;
 
     db.query(queryString, [req.params.id, req.session.user_id])

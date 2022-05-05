@@ -22,12 +22,13 @@
           <p><%= item.description %></p>
         </div>
 
-        <div>
-          <form id="chat-box" class="compose-message" action="/api/messages" method="POST">
+        <div class="compose-message">
+          <form id="chat-box" action="/api/messages" method="POST">
             <input type="hidden" id="receiver_id" name="receiver_id" value="<%= item.seller_id%>">
             <input type="hidden" id="item_id" name="item_id" value="<%= item.id%>">
             <input type="text" id="message" name="message">
             <button type="submit">
+            <p class="error-text"></p>
             <span class="iconify" data-icon="akar-icons:send"></span>
             </button>
           </form>
