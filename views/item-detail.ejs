@@ -25,18 +25,17 @@
 
   <% if (item.is_available) { %>
     <div>
-      <a href=#>
+        <p>Message Seller
         <span class="iconify" data-icon="bi:chat-dots"></span>
-        <p>Message Seller</p>
-          <form action="/api/messages" method="POST">
-              <input type="hidden" id="receiver_id" name="receiver_id" value="<%= item.seller_id%>">
-              <input type="hidden" id="item_id" name="item_id" value="<%= item.id%>">
-              <input type="text" id="message" name="message">
+        </p>
+        <form action="/api/messages" method="POST">
+          <input type="hidden" id="receiver_id" name="receiver_id" value="<%= item.seller_id%>">
+          <input type="hidden" id="item_id" name="item_id" value="<%= item.id%>">
+          <input type="text" id="message" name="message">
           <button type="submit">
           <span class="iconify" data-icon="akar-icons:send"></span>
           </button>
         </form>
-      </a>
     </div>
     <% } else { %>
       <p>SOLD</p>
