@@ -4,6 +4,10 @@ $(() => {
     $('#cost-search').show();
   })
 
+  $('#open-message-form').on('click', () => {
+    $('#chat-box').fadeIn();
+  });
+
 $('.compose-message').find('form').submit(function(event){
   event.preventDefault();
   const messageText = $('.compose-message').find('#message').val();
