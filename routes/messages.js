@@ -62,12 +62,12 @@ module.exports = (db) => {
   // add new message from item_details
   router.post("/", (req, res) => {
 
-    //Handling error, if the form is empty
-    const message = req.body.message.trim();
-    if (!message) {
-      res.statusCode = 400;
-      return res.send("Fill out the form!");
-    }
+    // //Handling error, if the form is empty
+    // const message = req.body.message.trim();
+    // if (!message) {
+    //   res.statusCode = 400;
+    //   return res.send("Fill out the form!");
+    // }
 
     let queryString = `
     INSERT INTO messages(sender_id, receiver_id, item_id, body)
