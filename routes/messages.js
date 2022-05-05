@@ -8,7 +8,7 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
 
    let queryString = `
-   SELECT messages.id, users.id AS sender_id, users.name AS sender_name, users.email, users.phone, items.title AS inquiry_about, messages.created_at, messages.body
+   SELECT messages.id, users.id AS sender_id, users.name AS sender_name, users.email, users.phone, items.title AS inquiry_about, messages.created_at, messages.body, items.photo_url
    FROM messages
    JOIN users on sender_id = users.id
    JOIN items on item_id = items.id
