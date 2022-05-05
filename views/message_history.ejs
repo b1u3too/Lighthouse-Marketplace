@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>My Messages</title>
+  <title>Light Chat</title>
   <%- include('partials/head'); %>
 </head>
 
@@ -12,36 +12,39 @@
     <%- include('partials/nav')%>
   </header>
 
-
 <main>
 
-  <p>Conversation History</p>
+  <div class="title-banner">
+    <h2>Conversation History</h2>
+  </div>
 
-  <div>
-  <% for (const message of messages) {%>
+  <h3>You conversation with <span class="accent-text"><%= messages[0].sender_name%></span> about  <span class="accent-text"><%= messages[0].inquiry_about %></span>!</h3>
+  <img src="<%= messages[0].photo_url%>">
+
+  <div class="details-feed">
+    <% for (const message of messages) {%>
       <article>
-        <div class="individual_message">
-          <p> SENT FROM <%= message.sender_name%></p>
-          <p> MESSAGE ABOUT <%= message.inquiry_about %></p>
-          <p> SENT AT <%= message.created_at %></p>
-          <p> MESSAGE <%= message.body %></p>
-          <p>---------------------------------------------------------</p>
+        <div class="individual-details">
+          <span class="accent-text"><%= message.sender_name%></span>
+          <p><%= message.body %></p>
+          <p><%= message.created_at %></p>
         </div>
       </article>
-   <% } %>
+    <% } %>
   </div>
 
 
     <!-- SPACE FOR NEW MESSAGE INPUT -->
-  <form action="/api/messages" method="POST">
-    <input type="hidden" id="receiver_id" name="receiver_id" value="<%= messages[0].sender_id%>">
-    <input type="hidden" id="item_id" name="item_id" value="<%= messages[0].item_id%>">
-    <input type="text" id="message" name="message">
-    <button type="submit">
-    <span class="iconify" data-icon="akar-icons:send"></span>
-    </button>
-  </form>
-
+  <div class="compose-message">
+    <form action="/api/messages" method="POST">
+      <input type="hidden" id="receiver_id" name="receiver_id" value="<%= messages[0].sender_id%>">
+      <input type="hidden" id="item_id" name="item_id" value="<%= messages[0].item_id%>">
+      <input type="text" id="message" name="message">
+      <button type="submit">
+      <span class="iconify" data-icon="akar-icons:send"></span>
+      </button>
+    </form>
+  </div>
 </main>
 
 <footer>
