@@ -1,0 +1,22 @@
+$title-font-stack: 'Lobster', cursive;
+$body-font-stack: 'Andika New Basic', sans-serif;
+$sea-serpent: #4DC1C4;
+$sea-serpent-transparent: #4DC1C470;
+$off-white: #FCFCFC;
+$gray: #C4C4C4;
+$gray-transparent: #C4C4C470;
+
+.compose-message {
+  display: inline;
+
+  input {
+    width: 85%;
+  }
+
+  button {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    margin-left: 1rem;
+  }
+}
