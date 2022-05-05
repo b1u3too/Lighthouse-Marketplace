@@ -11,24 +11,16 @@
     <%- include('partials/nav')%>
   </header>
 
-  <article>
-    <img src="<%= item.photo_url%>" alt="listing image">
-    <h2><%= item.title %></h2>
-    <div class="is-catch">
-      <p>catch of the day</p>
-      <span class="iconify" data-icon="fa6-solid:fish"></span>
-    </div>
-    <p><%= item.seller_name %></p>
-    <p><%= item.description %></p>
-    <p>$<%= item.price %>.00</p>
-  </article>
+  <section class="details-feed">
+    <article>
+      <img src="<%= item.photo_url%>" alt="listing image">
 
-  <% if (item.is_available) { %>
-    <div>
-        <p>Message Seller
-        <span class="iconify" data-icon="bi:chat-dots"></span>
-        </p>
-        <form action="/api/messages" method="POST">
+      <div class="individual-details">
+        <h2><%= item.title %></h2>
+        <p><%= item.seller_name %></p>
+        <p><%= item.description %></p>
+
+        <form id="chat-box" class="compose-message" action="/api/messages" method="POST">
           <input type="hidden" id="receiver_id" name="receiver_id" value="<%= item.seller_id%>">
           <input type="hidden" id="item_id" name="item_id" value="<%= item.id%>">
           <input type="text" id="message" name="message">
@@ -36,10 +28,29 @@
           <span class="iconify" data-icon="akar-icons:send"></span>
           </button>
         </form>
-    </div>
-    <% } else { %>
-      <p>SOLD</p>
-    <% } %>
+      </div>
+
+      <div class="details-top-right">
+        <% if (item.is_featured) { %>
+          <div class="is-catch">
+            <p>catch of the day</p>
+            <span class="iconify" data-icon="fa6-solid:fish"></span>
+          </div>
+        <% } %>
+
+        <p>$<%= item.price %>.00</p>
+
+        <% if (item.is_available) { %>
+          <a href="#chat-box" id="open-message-form">Message Seller
+            <span class="iconify" data-icon="bi:chat-dots"></span>
+          </a>
+        </div>
+        <% } else { %>
+          <p class="sold-tag">SOLD</p>
+        <% } %>
+      </div>
+    </article>
+  </section>
 
   <footer>
     <%- include('partials/footer')%>
