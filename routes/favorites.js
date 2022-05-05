@@ -6,7 +6,7 @@ module.exports = (db) => {
   // show a user's favorite list
   router.get("/", (req, res) => {
    let queryString = `
-    SELECT DISTINCT favorites.item_id, items.title, items.price, items.description, items.is_available
+    SELECT DISTINCT favorites.item_id, items.title, items.price, items.description, items.is_available, items.photo_url
     FROM favorites
     LEFT JOIN items
     ON favorites.item_id = items.id
