@@ -21,7 +21,7 @@
     <% for (const message of messages) {%>
       <article>
         <div class="individual_message">
-          <a href="/api/messages/users/<%= message.id %>"> SENT FROM <%= message.sender_name%></a>
+          <a href="/api/messages/conversation/<%= message.id %>"> SENT FROM <%= message.sender_name%></a>
           <p> MESSAGE ABOUT <%= message.inquiry_about %></p>
           <p> SENT AT <%= message.created_at %></p>
           <p> MESSAGE <%= message.body %></p>
