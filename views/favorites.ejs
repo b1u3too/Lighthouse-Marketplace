@@ -21,9 +21,6 @@
           <img src="<%= favorite.photo_url%>">
           <div class="individual-details">
             <a href="/api/items/<%=favorite.item_id%>"><%= favorite.title %></a>
-
-            <p>Is it available?</p>
-            <%= favorite.is_available %>
             <p> <%= favorite.description %></p>
             <% if (favorite.is_available) {%>
               <p> $<%= favorite.price %>.00</p>
