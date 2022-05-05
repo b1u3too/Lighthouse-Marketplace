@@ -33,18 +33,20 @@
         </div>
       </article>
     <% } %>
+    <div class="compose-message">
+      <p class="error-text"></p>
+      <form id="chat-box" action="/api/messages" method="POST">
+        <input type="hidden" id="receiver_id" name="receiver_id" value="<%= messages[0].sender_id%>">
+        <input type="hidden" id="item_id" name="item_id" value="<%= messages[0].item_id%>">
+        <input type="text" id="message" name="message">
+        <button type="submit">
+        <span class="iconify" data-icon="akar-icons:send"></span>
+        </button>
+      </form>
+    </div>
   </div>
 
-  <div class="compose-message">
-    <form action="/api/messages" method="POST">
-      <input type="hidden" id="receiver_id" name="receiver_id" value="<%= messages[0].sender_id%>">
-      <input type="hidden" id="item_id" name="item_id" value="<%= messages[0].item_id%>">
-      <input type="text" id="message" name="message">
-      <button type="submit">
-      <span class="iconify" data-icon="akar-icons:send"></span>
-      </button>
-    </form>
-  </div>
+
 </main>
 
 <footer>
