@@ -28,7 +28,7 @@ module.exports = (db) => {
   });
 
   // show message history with the sender
-  router.get("/message/:id", (req, res) => {
+  router.get("/conversation/:id", (req, res) => {
     let queryString = `
     SELECT users.name AS sender_name, users.id AS sender_id, messages.item_id AS item_id, items.title AS inquiry_about, messages.created_at, messages.body, users.email, users.phone
     FROM messages
@@ -55,6 +55,14 @@ module.exports = (db) => {
 
   // add new message from item_details
   router.post("/", (req, res) => {
+
+    //Handling error, if the form is empty
+    const message = req.body.message.trim();
+    if (!message) {
+      res.statusCode = 400;
+      return res.send("Fill out the form!");
+    }
+
     let queryString = `
     INSERT INTO messages(sender_id, receiver_id, item_id, body)
     VALUES($1, $2, $3, $4)
@@ -66,7 +74,8 @@ module.exports = (db) => {
     db.query(queryString,queryParams)
     .then(data => {
       const messages = data.rows;
-      res.redirect("/");
+      console.log(messages);
+      res.redirect(`/api/messages/conversation/${messages[0].id}`);
     })
     .catch(err => {
       res
