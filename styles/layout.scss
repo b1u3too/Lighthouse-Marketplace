@@ -71,5 +71,9 @@ form {
   justify-content: space-between;
   width: 10rem;
   display: flex;
+}
 
+.accent-text {
+  font-weight: bold;
+  color: $sea-serpent;
 }
