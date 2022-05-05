@@ -5,18 +5,41 @@ $sea-serpent-transparent: #4DC1C470;
 $off-white: #FCFCFC;
 $gray: #C4C4C4;
 $gray-transparent: #C4C4C470;
+$heads-up-fuschia: $F50FA9;
 
 .compose-message {
-  display: inline;
+
+  #chat-box {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+  }
 
   input {
-    width: 85%;
+    width: 80%;
+    height: 3rem;
+    text-align: left;
   }
 
   button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 3rem;
     width: 3rem;
+    border: none;
     border-radius: 50%;
+    background-color: $sea-serpent;
     margin-left: 1rem;
+
+    &:hover {
+      background-color: $gray-transparent;
+    }
+
+    &:active {
+      color: $off-white;
+    }
+
   }
 }

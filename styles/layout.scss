@@ -6,6 +6,7 @@ $sea-serpent-transparent: #4DC1C470;
 $off-white: #FCFCFC;
 $gray: #C4C4C4;
 $gray-transparent: #C4C4C470;
+$heads-up-fuschia: #F50FA9;
 
 body,
 html {
@@ -76,4 +77,9 @@ form {
 .accent-text {
   font-weight: bold;
   color: $sea-serpent;
+}
+
+.error-text, .sold-tag {
+  color: $heads-up-fuschia;
+  font-weight: bold;
 }
