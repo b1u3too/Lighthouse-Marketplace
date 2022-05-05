@@ -16,13 +16,15 @@ $('.compose-message').find('form').submit(function(event){
   }
 
   const message = $(this).serializeArray();
-
+  console.log(message);
   $.ajax({
     method:'POST',
     url:'/api/messages',
     data: message
   })
     .then(() => {
+      alert("Message sent!")
+      $('.compose-message').find('form').trigger("reset");
       return;
     })
     .catch((err) => {
@@ -39,7 +41,6 @@ $('.compose-message').find('form').submit(function(event){
     $('.compose-message').find('.error-text').html(err.message);
     $('.error-message').slideDown('fast');
   }
-
 
 });
 
