@@ -28,15 +28,17 @@
         <p>Message Seller
         <span class="iconify" data-icon="bi:chat-dots"></span>
         </p>
+      <div class="compose-message">
         <form action="/api/messages" method="POST">
           <input type="hidden" id="receiver_id" name="receiver_id" value="<%= item.seller_id%>">
           <input type="hidden" id="item_id" name="item_id" value="<%= item.id%>">
           <input type="text" id="message" name="message">
           <button type="submit">
-          <span class="iconify" data-icon="akar-icons:send"></span>
+            <span class="iconify" data-icon="akar-icons:send"></span>
           </button>
+          <p class="error-text"></p>
         </form>
-    </div>
+      </div>
     <% } else { %>
       <p>SOLD</p>
     <% } %>
