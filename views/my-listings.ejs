@@ -22,7 +22,6 @@
         <article>
           <img src="<%= listing.photo_url%>">
           <div class="individual-details">
-            <p> <%= listing.id %></p> <!-- For testing purpose -->
             <h3> <%= listing.title %></h3>
             <p> <%= listing.description %></p>
             <p> $<%= listing.price %>.00</p>
@@ -44,7 +43,7 @@
           </div>
         </article>
       <% } else { %>
-        <p>You aren't selling anything lighthouse-themed right now! Click the button above to post something illuminating.</p>
+        <p>You aren't selling anything lighthouse-themed right now! Click the button above to post something 💡illuminating💡</p>
       <% } %>
     <% } %>
 
