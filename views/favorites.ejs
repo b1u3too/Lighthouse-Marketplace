@@ -18,9 +18,9 @@
     <% if (favorites.length > 0) { %>
       <% for (const favorite of favorites) { %>
         <article>
-          <img src="<%= favorite.photo_url%>">
+          <a href="/api/items/<%=favorite.item_id%>"><img src="<%= favorite.photo_url%>"></a>
           <div class="individual-details">
-            <a href="/api/items/<%=favorite.item_id%>"><%= favorite.title %></a>
+            <p><%= favorite.title %></p>
             <p> <%= favorite.description %></p>
             <% if (favorite.is_available) {%>
               <p> $<%= favorite.price %>.00</p>

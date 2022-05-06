@@ -48,8 +48,8 @@
   <section class="listing-tiles">
     <% for (let item of items) { %>
       <article class="tile">
-        <img src="<%= item.photo_url%>" alt="listing photograph">
-        <a href="/api/items/<%=item.id%>"><%= item.title %></a>
+        <a href="/api/items/<%=item.id%>"><img src="<%= item.photo_url%>" alt="listing photograph"></a>
+        <p><%= item.title %></p>
         <p> $<%= item.price %>.00</p>
 
         <% if (item.is_featured) { %>

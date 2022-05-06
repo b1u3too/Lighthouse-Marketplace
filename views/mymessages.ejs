@@ -21,7 +21,7 @@
       <% if (messages.length > 0) { %>
         <% for (const message of messages) {%>
           <article>
-            <img src="<%= message.photo_url%>">
+            <a href="/api/items/<%= message.item_id%>"><img src="<%= message.photo_url%>"></a>
             <div class="individual-details">
               <p>From: <%= message.sender_name%></p>
               <p> Listing: <%= message.inquiry_about %></p>

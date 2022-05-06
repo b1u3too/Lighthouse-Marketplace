@@ -20,7 +20,7 @@
 
   <div class="conversation-hero-banner">
     <h3>Your conversation with <span class="accent-text"><%= messages[0].sender_name%></span> about  <span class="accent-text"><%= messages[0].inquiry_about %></span>!</h3>
-    <img src="<%= messages[0].photo_url%>">
+    <a href="/api/items/<%=messages[0].item_id%>"><img src="<%= messages[0].photo_url%>"></a>
   </div>
 
   <div class="details-feed">
