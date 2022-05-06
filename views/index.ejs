@@ -51,10 +51,11 @@
         <img src="<%= item.photo_url%>" alt="listing photograph">
         <a href="/api/items/<%=item.id%>"><%= item.title %></a>
         <p> $<%= item.price %>.00</p>
+
         <% if (item.is_featured) { %>
           <div class="is-catch">
-            <span class="iconify" data-icon="fa6-solid:fish"></span>
-            <p>catch of the day</p>
+            <p>Catch of the Day</p>
+            <span class="iconify" data-icon="fa6-solid:fish">Catch of the Day</span>
           </div>
         <% } %>
 
