@@ -17,7 +17,6 @@ module.exports = (db) => {
       .then(data => {
         const item = data.rows[0];
         const templateVar = {item: item, user_id: Number(curUser)}
-        console.log(templateVar);
         res.render("item-detail",templateVar);
       })
       .catch(err => {
