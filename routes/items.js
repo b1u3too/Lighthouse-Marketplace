@@ -5,6 +5,8 @@ module.exports = (db) => {
 
   // show a specific item
   router.get("/:id", (req, res) => {
+    const curUser = req.session.user_id;
+
     let queryString = `
     SELECT items.*, users.name AS seller_name
     FROM items
@@ -14,7 +16,8 @@ module.exports = (db) => {
     db.query(queryString,[req.params.id])
       .then(data => {
         const item = data.rows[0];
-        res.render("item-detail", {item: item});
+        const templateVar = {item: item, user_id: Number(curUser)}
+        res.render("item-detail",templateVar);
       })
       .catch(err => {
         res

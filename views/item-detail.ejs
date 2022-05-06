@@ -37,7 +37,7 @@
 
       <div class="details-top-right">
         <div>
-          <% if (item.is_featured) { %>
+          <% if (item.is_featured && item.seller_id !== user_id) { %>
             <div class="is-catch">
               <p>catch of the day</p>
               <span class="iconify" data-icon="fa6-solid:fish"></span>
@@ -47,12 +47,16 @@
           <p>$<%= item.price %>.00</p>
         </div>
 
-        <% if (item.is_available) { %>
+        <% if (item.is_available && item.seller_id !== user_id) { %>
           <a href="#" id="open-message-form">Message Seller
             <span class="iconify" data-icon="bi:chat-dots"></span>
           </a>
-        <% } else { %>
+        <% } else if (!item.is_available && item.seller_id !== user_id){ %>
           <p class="sold-tag">SOLD</p>
+        <% } else {%>
+          <a href="mailto:boostlighthouse@fakelighthouse.com?subject=I want to boost my listing (#<%= item.id %>)!" class="feature-request">Light up your listing!
+            <span class="iconify" data-icon="ep:promotion"></span>
+          </a>
         <% } %>
       </div>
     </article>
