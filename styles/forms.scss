@@ -7,6 +7,39 @@ $gray: #C4C4C4;
 $gray-transparent: #C4C4C470;
 $heads-up-fuschia: #F50FA9;
 
+.listing-form {
+
+  .form-banner {
+    padding: 1rem;
+    text-align: center;
+    background-color: $sea-serpent;
+    color: $off-white;
+    margin-bottom: 2rem;
+  }
+
+  form {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  input, textarea {
+    border-radius: 15px;
+    padding-left: 1rem;
+  }
+
+  label {
+    margin-top: 1rem;
+    font-size: large;
+    font-weight: bold;
+  }
+
+  button {
+    background-color: $sea-serpent;
+    border-color: $sea-serpent;
+    margin-bottom: 5rem;
+  }
+}
+
 .compose-message {
 
   #chat-box {
