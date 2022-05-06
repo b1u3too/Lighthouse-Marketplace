@@ -4,33 +4,37 @@ $(() => {
     $('#cost-search').show();
   })
 
-$('.compose-message').find('form').submit(function(event){
-  event.preventDefault();
-  const messageText = $('.compose-message').find('#message').val();
-  hideError();
+  $('#open-message-form').on('click', () => {
+    $('#chat-box').fadeIn();
+  });
 
-  if(!messageText || messageText.trim().length === 0) {
-    const err = new Error("No message!");
-    showError(err);
-    return;
-  }
+  $('.compose-message').find('form').submit(function(event){
+    event.preventDefault();
+    const messageText = $('.compose-message').find('#message').val();
+    hideError();
 
-  const message = $(this).serializeArray();
-  console.log(message);
-  $.ajax({
-    method:'POST',
-    url:'/api/messages',
-    data: message
-  })
-    .then(() => {
-      alert("Message sent!")
-      $('.compose-message').find('form').trigger("reset");
+    if(!messageText || messageText.trim().length === 0) {
+      const err = new Error("Please write a message first!");
+      showError(err);
       return;
+    }
+
+    const message = $(this).serializeArray();
+    console.log(message);
+    $.ajax({
+      method:'POST',
+      url:'/api/messages',
+      data: message
     })
-    .catch((err) => {
-      console.log(err.message);
-    });
-});
+      .then(() => {
+        alert("Message sent!")
+        $('.compose-message').find('form').trigger("reset");
+        return;
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  });
 
   const hideError = function() {
     $('.compose-message').find('.error-text').html('');

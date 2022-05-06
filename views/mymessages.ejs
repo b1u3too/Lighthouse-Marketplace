@@ -11,7 +11,6 @@
     <%- include('partials/nav')%>
   </header>
 
-
   <main>
     <div class="title-banner">
       <h2>Your Messages</h2>
@@ -21,7 +20,7 @@
       <% if (messages.length > 0) { %>
         <% for (const message of messages) {%>
           <article>
-            <img src="<%= message.photo_url%>">
+            <a href="/api/items/<%= message.item_id%>"><img src="<%= message.photo_url%>"></a>
             <div class="individual-details">
               <p>From: <%= message.sender_name%></p>
               <p> Listing: <%= message.inquiry_about %></p>
@@ -37,7 +36,7 @@
           </article>
         <% } %>
       <%} else {%>
-        <p>No messages! Get people talking by putting your best and brightest <a href="api/mylistings/new" class="accent-text">up for sale</a>!</p>
+        <p>No messages! Get people talking by putting your best and brightest <a href="/api/mylistings/new" class="accent-text">up for sale</a>!</p>
       <% } %>
     </div>
   </main>

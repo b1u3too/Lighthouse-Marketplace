@@ -16,7 +16,7 @@ module.exports = (db) => {
     db.query(queryString,[req.params.id])
       .then(data => {
         const item = data.rows[0];
-        const templateVar = {item: item, user_id: curUser};
+        const templateVar = {item: item, user_id: Number(curUser)}
         console.log(templateVar);
         res.render("item-detail",templateVar);
       })

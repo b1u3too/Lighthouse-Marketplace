@@ -11,18 +11,25 @@
     <%- include('partials/nav')%>
   </header>
 
-  <section>
-      <h2> Create your listing </h2>
+  <section class="listing-form">
+    <div class="form-banner">
+      <h2> Create a New Listing </h2>
+    </div>
+
     <form action="/api/mylistings" method="POST">
-      <label for="name">Title</label>
-      <input type="text" name="title" placeholder="title">
+      <label for="name">Catchy Headline</label>
+      <input type="text" name="title">
+
+      <label for="price">Price (Dollars)</label>
+      <input type="text" name="price">
+
       <label for="description">Description</label>
-      <input type="text" name="description" placeholder="description">
-      <label for="price">Price</label>
-      <input type="text" name="price" placeholder="price">
-      <label for="photo_url">Photo_url</label>
-      <input type="text" name="photo_url" placeholder="photo_url">
-      <button type="submit" id="new-item-button">Create Post</button>
+      <textarea type="text" name="description" cols="30" rows="10"></textarea>
+
+      <label for="photo_url">Link to Photo</label>
+      <input type="text" name="photo_url">
+
+      <button type="submit" id="new-item-button">Post Listing</button>
     </form>
   </section>
 

@@ -20,7 +20,7 @@
 
   <div class="conversation-hero-banner">
     <h3>Your conversation with <span class="accent-text"><%= messages[0].sender_name%></span> about  <span class="accent-text"><%= messages[0].inquiry_about %></span>!</h3>
-    <img src="<%= messages[0].photo_url%>">
+    <a href="/api/items/<%=messages[0].item_id%>"><img src="<%= messages[0].photo_url%>"></a>
   </div>
 
   <div class="details-feed">
@@ -33,18 +33,20 @@
         </div>
       </article>
     <% } %>
+    <div class="compose-message">
+      <form id="chat-box" action="/api/messages" method="POST">
+        <input type="hidden" id="receiver_id" name="receiver_id" value="<%= messages[0].sender_id%>">
+        <input type="hidden" id="item_id" name="item_id" value="<%= messages[0].item_id%>">
+        <input type="text" id="message" name="message">
+        <button type="submit">
+        <span class="iconify" data-icon="akar-icons:send"></span>
+        </button>
+      </form>
+      <p class="error-text"></p>
+    </div>
   </div>
 
-  <div class="compose-message">
-    <form action="/api/messages" method="POST">
-      <input type="hidden" id="receiver_id" name="receiver_id" value="<%= messages[0].sender_id%>">
-      <input type="hidden" id="item_id" name="item_id" value="<%= messages[0].item_id%>">
-      <input type="text" id="message" name="message">
-      <button type="submit">
-      <span class="iconify" data-icon="akar-icons:send"></span>
-      </button>
-    </form>
-  </div>
+
 </main>
 
 <footer>

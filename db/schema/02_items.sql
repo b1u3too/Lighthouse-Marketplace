@@ -9,5 +9,5 @@ CREATE TABLE items (
   description TEXT,
   photo_url VARCHAR(255) NOT NULL,
   is_available BOOLEAN NOT NULL DEFAULT TRUE,
-  is_featured BOOLEAN NOT NULL DEFAULT TRUE
+  is_featured BOOLEAN NOT NULL DEFAULT FALSE
 );
