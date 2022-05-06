@@ -53,6 +53,10 @@
           </a>
         <% } else if (!item.is_available && item.seller_id !== user_id){ %>
           <p class="sold-tag">SOLD</p>
+        <% } else {%>
+          <a href="mailto:boostlighthouse@fakelighthouse.com?subject=I want to boost my listing (#<%= item.id %>)!" class="feature-request">Light up your listing!
+            <span class="iconify" data-icon="ep:promotion"></span>
+          </a>
         <% } %>
       </div>
     </article>
