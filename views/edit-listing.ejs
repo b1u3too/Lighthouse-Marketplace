@@ -11,9 +11,17 @@
     <%- include('partials/nav')%>
   </header>
 
+<<<<<<< Updated upstream
   <section class="listing-form">
     <div class="form-name">
       <h2> Bright Changes are a' Coming! </h2>
+=======
+<<<<<<< Updated upstream
+  <form action="/api/mylistings/<%= item.id%>/edit" method="POST">
+    <div>
+      <label for="photo_url">Link to your listing photo:</label>
+      <input type="text" id="photo_url" name="photo_url" value="<%= item.photo_url%>">
+>>>>>>> Stashed changes
     </div>
 
     <form action="/api/mylistings/<%= item_id %>/edit" method="POST">
@@ -22,6 +30,7 @@
       <input type="text" id="title" name="title">
 
       <label for="price">Price (Dollars)</label>
+<<<<<<< Updated upstream
       <input type="text" id="price" name="price">
 
       <label for="description">Tell us more...</label>
@@ -29,6 +38,33 @@
 
       <label for="photo_url">Link to your listing photo:</label>
       <input type="text" id="photo_url" name="photo_url">
+=======
+      <input type="text" id="price" name="price" value="<%= item.price%>">
+=======
+  <form action="/api/mylistings/<%= item_id %>/edit" method="POST">
+    <div>
+      <label for="photo_url">Link to your listing photo:</label>
+      <input type="text" id="photo_url" name="photo_url">
+    </div>
+    <div>
+      <label for="title">Catchy headline:</label>
+      <input type="text" id="title" name="title">
+    </div>
+    <div>
+      <label for="description">Tell us more...</label>
+      <textarea type="text" name="description" id="description" cols="30" rows="10"></textarea>
+    </div>
+    <div>
+      <label for="price">Price (Dollars)</label>
+      <input type="text" id="price" name="price">
+>>>>>>> Stashed changes
+    </div>
+    <!-- TODO: Disable the catch of the day field and mention "future construction"/paid feature -->
+    <!-- <div>
+      <label for="is_featured">Catch of the Day</label>
+      <input type="checkbox" id="is_featured" name="is_featured">
+    </div> -->
+>>>>>>> Stashed changes
 
       <button type="submit">Save Changes</button>
     </form>

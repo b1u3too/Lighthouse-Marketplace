@@ -11,17 +11,20 @@
     <%- include('partials/nav')%>
   </header>
 
-  <section>
+  <section class="listing-form">
+    <div class="form-name">
       <h2> Create your listing </h2>
+    </div>
+
     <form action="/api/mylistings" method="POST">
       <label for="name">Title</label>
-      <input type="text" name="title" placeholder="title">
-      <label for="description">Description</label>
-      <input type="text" name="description" placeholder="description">
+      <input type="text" name="title" id="title">
       <label for="price">Price</label>
-      <input type="text" name="price" placeholder="price">
-      <label for="photo_url">Photo_url</label>
-      <input type="text" name="photo_url" placeholder="photo_url">
+      <input type="text" name="price"" id="price">
+      <label for="description">Description</label>
+      <textarea type="text" name="description" id="description" cols="30" rows="10">
+      <label for="photo_url">Photo Link</label>
+      <input type="text" name="photo_url" id="photo_url">
       <button type="submit" id="new-item-button">Create Post</button>
     </form>
   </section>
