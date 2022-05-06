@@ -13,7 +13,7 @@ module.exports = (db) => {
    JOIN users on sender_id = users.id
    JOIN items on item_id = items.id
    WHERE receiver_id = $1
-   ORDER BY sender_name, created_at ASC;
+   ORDER BY created_at DESC;
     `;
 
     db.query(queryString,[req.session.user_id])
