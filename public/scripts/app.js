@@ -14,7 +14,7 @@ $(() => {
     hideError();
 
     if(!messageText || messageText.trim().length === 0) {
-      const err = new Error("No message!");
+      const err = new Error("Please write a message first!");
       showError(err);
       return;
     }
