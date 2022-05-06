@@ -71,8 +71,21 @@ module.exports = (db) => {
 
   // go to edit listing page
   router.get('/:id/edit', (req, res) => {
-      let item_id = req.params.id;
-      res.render('edit-listing',{item_id: item_id});
+    let queryString = `
+    SELECT *
+    FROM items
+    WHERE id = $1;`;
+
+    db.query(queryString,[req.params.id])
+      .then(data => {
+        const item = data.rows[0];
+        res.render('edit-listing', {item: item});
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
 
   });
 
