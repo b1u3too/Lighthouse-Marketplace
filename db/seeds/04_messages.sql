@@ -6,6 +6,7 @@ VALUES
   (4, 1, 4, 1, '2022-04-12 10:30:00', 'Sorry for my late reply Buyer 5! Still interested?'),
   (5, 4, 1, 1, '2022-04-12 10:35:00', 'Yes I am still interested!'),
   (6, 2, 1, 1, '2022-04-12 11:30:00', 'Hey! I wanna buy that lighthouse! Thanks! - Buyer 2'),
-  (7, 1, 2, 1, '2022-04-12 11:50:00', 'Sorry someone else is interested in it.');
-
-SELECT setval('messages_id_seq', 7);
+  (7, 1, 2, 1, '2022-04-12 11:50:00', 'Sorry someone else is interested in it.'),
+  (8, 2, 5, 10, '2022-04-11 11:50:00', 'I really need a code consultant.'),
+  (9, 4, 5, 10, '2022-04-12 11:50:00', 'Tell me why he is the best!');
+SELECT setval('messages_id_seq', 9);
