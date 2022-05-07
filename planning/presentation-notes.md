@@ -23,6 +23,7 @@ START WITH APP ON SCREEN
 ***My listings Page*** (April)
 - I can view all the listings I created
 - I can create an new listing --- The new item will be added to my listing page and home page
+   - Image link: https://images.pexels.com/photos/5080812/pexels-photo-5080812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 - I can edit a listing, too!
 - I can mark an item as sold -- The item will still appear on my listing page but not on home page (LIGHTHOUSE IN SANTA CRUZ)
 - I can delete an item --- The item will be deleted from the database
