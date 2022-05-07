@@ -25,9 +25,13 @@ This is our first group project at LighthouseLabs and we learned how to develop 
 ## Getting Started
 1. Fork this repository and clone it onto your local device.
 2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command.
-4. The app will be served at <http://localhost:8080/>.
-5. Go to <http://localhost:8080/> in your browser.
+3. Set up a local the database in ![PostgreSQL](https://www.postgresql.org/download/) 
+4. Connect to the database named midterm.
+5. In the database, \i install the tables in the db/schema directory.
+6. Next, \i install the seed data from the db/seeds directory.
+4. Start the web server using the `npm run local` command.
+5. The app will be served at <http://localhost:8080/>.
+6. Go to <http://localhost:8080/> in your browser.
 
 ❗️For the purpose of the demo, we are ommiting user login/logout function.
 
