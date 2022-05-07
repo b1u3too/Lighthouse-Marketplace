@@ -50,3 +50,6 @@ This is our first group project at LighthouseLabs and we learned how to develop 
 - Morgan 1.9.1
 - PG 8.5.0
 - SASS 1.35.1
+
+## A Note on Non-Stock image assets
+Some of the listing images were pulled from non-stock photos since this project is for educational purposes. If you want to look into how to purchase those items for yourself, their sources can be found online [here](https://imgur.com/a/FR0UqzY)
