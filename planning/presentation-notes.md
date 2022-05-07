@@ -24,13 +24,11 @@ START WITH APP ON SCREEN
 - I can view all the listings I created
 - I can create an new listing --- The new item will be added to my listing page and home page
 - I can edit a listing, too!
-- I can mark an item as sold -- The item will still appear on my listing page but not on home page
-- I can delete an item --- The item will be delete from the database
+- I can mark an item as sold -- The item will still appear on my listing page but not on home page (LIGHTHOUSE IN SANTA CRUZ)
+- I can delete an item --- The item will be deleted from the database
 
 ***Favorite Page***
-- I can view all the listings I favorited
-- I can remove a listing if I no longer like it
-- If a listing was marked sold by seller, it will show as SOLD text instead of price
+- If a listing was marked sold by seller, it will show as SOLD text instead of price (LIGHTHOUSE IN SANTA CRUZ)
 
 ### Second Login with user id 5
 ***Message Page*** (Kaz) 
